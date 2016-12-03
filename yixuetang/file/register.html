@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>注册</title>
+    <link rel="stylesheet" href="font/font.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--[if lt IE 9]>
+    <script src="js/html5.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部-->
+<header class="header text-center login-header">
+    <a href="index.html"><img src="images/logo.png" alt=""></a>
+</header>
+<!--头部end-->
+<div class="login-box">
+    <h2 class="text-center">专业分析,股神再现</h2>
+    <form action="#" method="post" name="login-form">
+        <div class="login-input">
+            <fieldset class="mt20"><input type="text" class="inp inp-block" name="mobile" id="mobile" placeholder="请输入手机号" minlength="11" maxlength="11" mobile="true" required="true"><i class="iconfont icon-phone fz16"></i></fieldset>
+            <fieldset class="mt20"><input type="password" class="inp inp-block" name="password" id="password" placeholder="请输入密码" minlength="6" maxlength="15" required="true"><i class="iconfont icon-wenzhang color-grey fz16"></i></fieldset>
+            <fieldset class="mt20"><input type="password" class="inp inp-block" name="verifycode" id="verifycode" placeholder="请输入图形验证码" minlength="3" maxlength="8" required="true"><i class="iconfont icon-wenzhang color-grey fz16"></i><div class="verify">
+                <img src="images/forgetverify.png" alt="图形验证码"></div></fieldset>
+            <fieldset class="mt20"><input type="password" class="inp inp-block" name="sendCode" id="sendCode" placeholder="请输入短信验证码" minlength="4" maxlength="6" required="true"><i class="iconfont icon-wenzhang color-grey fz16"></i><button type="button" class="send-code btn btn-default" id="send_code" data-hasverify="true" data-url="http://www.baidu.com">发送验证码</button></fieldset>
+            <fieldset class="remember mt20"><input type="checkbox" name="remember" required="true" id="remember" ><label for="remember" class="fz14 color-grey remember-label">我已同意XX注册协议</label></fieldset>
+            <fieldset class="mt20">
+                <button type="submit" class="btn btn-info btn-block btn-login">立即注册</button>
+            </fieldset>
+            <p>
+                <a href="#" class="color-grey fz16 forgetpassword">登录</a>
+                <span class="pull-right fz16">
+                    <a href="#" class="register">返回首页</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="color-grey fankui">意见反馈</a>
+                </span>
+            </p>
+        </div>
+    </form>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/validate.config.js"></script>
+<script>
+    $(function(){
+        var $send_code = $("#send_code");
+        $send_code.on("click", function () {
+            var $this = $(this),
+                    $form = $this.parents("form"),
+                    phoneReq = /^[1][3|4|5|6|7|8][0-9]{9}$/,
+                    mobile = $form.find("input[name='mobile']").val();
+            //是否处于发送验证码的状态
+            if ($this.hasClass("ing")) {
+                return;
+            }
+            //是否有验证码
+            var ishasVerify = $this.data("hasverify");
+
+            //有验证码
+            if (typeof (ishasVerify) != 'undefined' && ishasVerify != 'false') {
+                var vireifycode = $form.find("input[name='verifycode']").val();
+                if (vireifycode.length < 3) {
+                    return Alert("请填写正确的图形验证码");
+                }
+            }
+            //判断手机
+            if (!phoneReq.test(mobile)) {
+                return Alert("请填写正确的手机号");
+            }
+            $.ajax({
+                url: $this.data("url"),
+                type:"post",
+                data: {mobile:mobile,verifyCode:vireifycode},
+                dataType: "json",
+                cache: false,
+                error: function () {
+                    $this.html("发送验证码").removeClass("ing");
+                    Alert("发送失败");
+                },
+                success: function () {
+                    alert("发送成功");
+                    var i = 60;
+                    var codeInterval = setInterval(function () {
+                        $this.html(i + "秒后重发");
+                        if (i == 0) {
+                            clearInterval(codeInterval);
+                            $this.html("发送验证码").removeClass("ing");
+                        }
+                        i--;
+                    }, 1000);
+                }
+            });
+            $this.addClass("ing");
+    });
+
+    $("form[name='login-form']").validate({
+            errorClass: 'v-error',
+            errorElement: 'em',
+            debug: true,
+            highlight: function (element, errorClass) {
+                $(element).parent().addClass(errorClass);
+            },
+            unhighlight: function (element, errorClass) {
+                $(element).parent().removeClass(errorClass);
+            },
+            messages: {
+                mobile: {
+                    required: "请输入手机号码",
+                    minlength: "请输入正确的手机号"
+                },
+                password: {
+                    required: "请输入密码",
+                    minlength: "密码长度6-15位"
+                },
+                imgCode:{
+                    required:"请输入图形验证码"
+                },
+                sendCode:{
+                    required:"请输入短信验证码"
+                },
+                remember:{
+                    required:"请同意xx协议"
+                }
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+
+        });
+    })
+</script>
+</html>

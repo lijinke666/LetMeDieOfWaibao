@@ -1,0 +1,87 @@
+/*Debark  ��ʽ*/
+.icon-account{
+    width: 10rem;
+    text-align: center;
+}
+.font-style{
+    text-decoration: underline;
+    color:#FF8C31;
+}
+.paddingNews{
+    padding-left: 4rem;
+}
+.Register {
+    width: 70%;
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+    background: #FF8C31;
+    height:4rem;
+    line-height: 4rem;
+    border-radius: 1rem;
+}
+/*shipping-address��ʽ*/
+.shipping-address{
+    margin-top: 1rem;
+    background-color: #fff;
+}
+.shipping-address>div>p{
+    margin: 0;
+    padding: 0;
+}
+.address-ones{
+    padding: 0.8rem 2rem;
+}
+.newsfooter{
+    background-color: #FF8C31;
+    height: 4rem;
+    line-height: 4rem;
+}
+/*appendNews */
+.append-background{
+    background-color: #fff;
+}
+.addressNews{
+    padding-left: 1rem;
+}
+.append-Register{
+    margin-top: 1rem;
+    text-align: center;
+    background: #fff;
+    height:4rem;
+    line-height: 4rem;
+    background-color: #FF8C31;
+}
+/*change-password*/
+.chang-padding{
+    padding-top: .5rem;
+}
+.chang-background{
+    background-color: #FF8C31;
+    border-bottom: 1px solid #ccc;
+}
+.chang-background-grey {
+    margin-top: 1rem;
+    background-color: #fff;
+}
+.icon-margin-right{
+    margin-right: 0.35rem;
+}
+/*convert*/
+.convert-padding{
+    padding: 1rem 0;
+}
+.convert-img-content{
+    width: 5rem;
+    padding: .5rem 1rem;
+    border: 1px solid #CCC ;
+}
+
+.convert-style-p>p{
+    margin: 0;
+}
+.convert-bth{
+    border-radius: 1rem;
+    background-color: #ccc;
+}
+

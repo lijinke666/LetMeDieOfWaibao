@@ -1,0 +1,63 @@
+@charset "utf-8";
+@mixin clearfix { &:before,&:after { content: " "; display: block; height: 0; clear: both; visibility: hidden; } }
+@mixin ellipsis{overflow:hidden; text-overflow: ellipsis; white-space: nowrap;}
+@mixin ellipsis-2{overflow: hidden; text-overflow: ellipsis; @include display-box; @include box-orient(vertical); -webkit-line-clamp: 2;}
+@mixin ellipsis-n($n){overflow: hidden; text-overflow: ellipsis; @include display-box; @include box-orient(vertical); -webkit-line-clamp: $n;}
+
+/* 父公用样式，用于被继承 */
+%background-size-100p{ @include background-size(100% 100%);}
+%translate-centerX-centerY{ @include transform(translate(-50%, -50%) translateZ(0));}
+%translate-centerX{@include transform(translate(-50%, 0) translateZ(0));}
+%translate-centerY{ @include transform(translate(0, -50%) translateZ(0));}
+%rotate--45{ @include transform(rotate(-45deg) translateZ(0));}
+%rotate-45{ @include transform(rotate(45deg) translateZ(0));}
+%rotate-135{ @include transform(rotate(135deg) translateZ(0));}
+%transition-02{ @include transition(0.2s all ease); @include backface-visibility(hidden); @include perspective(1000);}
+%transition-05{ @include transition(0.5s all ease); @include backface-visibility(hidden); @include perspective(1000);}
+%transition-06{ @include transition(0.6s all ease); @include backface-visibility(hidden); @include perspective(1000);}
+%translateX--100p{ @include transform(translateX(-100%) translateZ(0));}
+%translateX-0{ @include transform(translateX(0) translateZ(0));}
+%box-center{ @include display-box; @include box-orient(horizontal); @include box-pack(center); @include box-align(center); }
+%box-center-v{ @include display-box; @include box-orient(vertical); @include box-pack(center); @include box-align(center); }
+%box-flex-1{ @include box-flex(1);}
+%box-flex-2{ @include box-flex(2);}
+%radius-0{ @include border-radius(0);}
+%radius-15px{ @include border-radius(15px);}
+%radius-12px{ @include border-radius(12px);}
+%radius-10px{ @include border-radius(10px);}
+%radius-5px{ @include border-radius(5px);}
+%radius-3px{ @include border-radius(3px);}
+%radius-2px{ @include border-radius(2px);}
+%radius-100p{ @include border-radius(100%);}
+%radius-50p{ @include border-radius(50%);}
+%box-shadow { @include box-shadow(0 0 6px rgba(0,0,0,.1));}
+%text-shadow{ @include text-shadow(0 1px 1px rgba(0,0,0,.3));}
+%clearfix { @include clearfix;}
+
+@mixin inlineblock{ display: inline-block; *display: inline; *zoom:1;}
+
+@mixin a-color($value01:$a_color,$value02:$a_color,$value03:$a_color,$value04:$a_color){
+    &:link{ color: $value01;}
+    &:visited{ color: $value02;}  
+    &:hover{ color: $value03;}  
+    &:active{ color: $value04;}
+}
+
+/* hover时的颜色,$is-light是否为亮色  */
+@function hovercolor ($color, $amount ) {
+    @if $is-light == true {
+        @return lighten($color, $amount)
+    }   @else   {
+        @return darken($color, $amount)
+    }
+}
+
+@mixin btn($bgcolor,$bordercolor,$fontcolor){
+    &,&:visited{background-color:$bgcolor; border-color:$bgcolor; color: $fontcolor; @include a-color($fontcolor,$fontcolor,$fontcolor,$fontcolor);
+        &:hover{background-color: hovercolor($bgcolor, 5%); border-color: hovercolor($bgcolor, 8%);}
+        &:active{background-color: hovercolor($bgcolor, 8%); border-color: hovercolor($bgcolor, 10%);}
+        &.btn-border{ color: $bgcolor;
+             &:hover{ color: $fontcolor;}
+        }
+    }
+}

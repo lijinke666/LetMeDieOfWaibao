@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'iconfont' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    vertical-align: middle;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-home:before{
+    content:"\e605";
+}
+.icon-baoming:before{
+    content: "\e600";
+}
+.icon-sousuo:before{
+    content: "\e601";
+}
+.icon-hezuo:before{
+    content: "\e602";
+}
+.icon-toupiao:before{
+    content: "\e604";
+}

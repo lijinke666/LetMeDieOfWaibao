@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if IE]>
+    <script src="js/html5.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="register">
+    <div class="rs-content">
+        <div class="rs-Progress">
+            <img src="images/logo2.png">
+            <ul class="fz16">
+                <li class="active">Cart</li>
+                <li class="active">Shipping&Billing</li>
+                <li class="active">Order confirmation</li>
+                <li class="active">Payment</li>
+            </ul>
+        </div>
+        <p class="fz16">Payment Options</p>
+        <p class="rs-border"></p>
+        <p class="rs-sp fz14"><span>Creadit Card (this infomation is secure)</span><span class="icon-jiantoushang color-info"></span></p>
+        <form method="#" name="Pay" action="http://www.baidu.com">
+            <p><span>Card Number:</span><input  id="lastname" name="lastname" creditcard="true" required="true"><img src="images/visa.png"></p>
+            <p><span>Verification #: </span><input id="number" name="number" type="text" required="true" digits="true"></p>
+            <p><span>Card expires on:</span><input  name="time" id="time"  required="true" dateISO="true"></p>
+            <p><button type="submit" class="submit btn btn-success" >Place Order</button></p>
+        </form>
+        <p class="rs-border"></p>
+        <p class="rs-sp fz14"><a href="#">Pay with PayPal (the safer easier way to pay)</a><span class="icon-youjiantou color-info"></span></p>
+        <p class="rs-border"></p>
+        <div class="His-footer fz14 text-center">
+            <p><img src="images/renzheng.jpg"></p>
+            <p>Copyright @ 2014 - 2016 okspare.com. All right reserved.</p>
+        </div>
+        <div class="His-right">
+            <ul>
+                <li><span>Cart Total	</span><span>$  503.62</span></li>
+                <li><span>Shipping	</span><span>$   00.00</span></li>
+                <li><p></p></li>
+                <li><span class="color-danger">Total Payable	</span><span class="color-danger">$  503.62</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    $(function(){
+        $("form[name='Pay']").validate({
+            submitHandler: function (form) {
+                Alert("提交成功!", true);
+                form.submit();
+            }
+        });
+    })
+
+</script>
+</html>

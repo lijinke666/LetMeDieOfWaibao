@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>结算</title>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!--头部-->
+<header class="flex">
+    <div class="l box-flex-1 text-left"><a  onclick="back()" class="icon-left"></a></div>
+    <div class="c box-flex-1 text-center"><h1>结算</h1></div>
+    <div class="r box-flex-1 text-right"><a href="#"></a></div>
+</header>
+<!--收货地址-->
+<div class="section header-margin pay-address-box fz14rem" >
+    <a href="shipping-address.html" class="flex flex-vc">
+        <div class="address-icon"><span class="icon-address"></span></div>
+        <div class="box-flex-1">
+            <span class="pay-name">李金珂</span><span class="pay-phone">18181356512</span>
+            <div>四川省成都市金牛区星河路67号</div>
+        </div>
+        <div class="text-right"><span class="icon-right"></span></div>
+    </a>
+</div>
+<!--订单金额-->
+<div class="section recharge-col order">
+    <div class="order-title fz14rem"><span class="icon-shop"></span>订单金额</div>
+    <ul class="none order-money fz14rem">
+        <li class="flex flex-vc">
+            <div class="box-flex-1">商品金额</div>
+            <div class="box-flex-1 text-right">&yen;1200</div>
+        </li>
+        <li class="flex flex-vc">
+            <div class="box-flex-1">运费</div>
+            <div class="box-flex-1 text-right">&yen;10</div>
+        </li>
+    </ul>
+</div>
+<!--支付金额-->
+<div class="section recharge-col need-pay-money fz14rem">还需支付:<span class="color-main">&yen;1300</span></div>
+<!--结算-->
+<footer class="section recharge-col text-center flex flex-vc">
+    <div class="box-flex-1 text-left">待支付:<span class="color-main">&yen;<span>1300</span></span></div>
+    <div class="box-flex-1"><button class="btn btn-primary btn-block pay-conversion">确认兑换</button></div>
+</footer>
+</body>
+</html>

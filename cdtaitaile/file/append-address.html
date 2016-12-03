@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>添加新地址</title>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/include/lingwaideyangshi.css">
+</head>
+<body>
+<header class="flex chang-background">
+    <div class="l box-flex-1 text-left "><a onclick="back()" class="color-white"><span class="icon-address"></span>添加新地址</a></div>
+    <div class="r box-flex-1 text-right "><a href="shipping-address.html" class="color-white">保存</a></div>
+</header>
+    <div class="header-margin append-background">
+        <div class="flex-hx box-flex-1">
+            <div class="box-flex-1 flex-hx fz14rem">
+                <div class="box-flex-1 flex  recharge-col ">
+                    <span class="flex-vc flex ">收货人</span>
+                    <input class="inp inp-block inp-noborder select-noborder box-flex-1 border-none" type="text" >
+                </div>
+                <div class="box-flex-1 flex recharge-col">
+                    <span class="flex-vc flex">联系电话</span>
+                    <input class="inp inp-block inp-noborder select-noborder box-flex-1 border-none" type="text" >
+                </div>
+                <div class="box-flex-1 flex recharge-col">
+                    <span class="flex-vc flex" style="margin-right:2.5rem;">地区</span>
+                    <div class="box-flex-1 flex-hx a" id="city">
+                            <select class="prov border-none box-flex-1 text-center select-recharge-col"></select>
+                            <select class="city border-none box-flex-1 text-center select-recharge-col" disabled="disabled"></select>
+                            <select class="dist border-none box-flex-1 text-center select-recharge-col" disabled="disabled"></select>
+                    </div>
+                </div>
+                <div class="box-flex-1 flex recharge-col">
+                    <span class="flex-vc flex ">详细地址</span>
+                    <input class="inp inp-block inp-noborder select-noborder box-flex-1 border-none" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+   <a href="#" class="btn-block append-Register flex-vc btn-primary fz16rem">设置为默认地址</a>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cityselect.js"></script>
+<script>
+    $("#city").citySelect();
+    $("#city").citySelect({
+        url:"js/city.min.js",
+        prov:"四川",
+        city:"成都",
+        dist:"金牛区",
+        nodata:"none"
+    });
+</script>
+</html>

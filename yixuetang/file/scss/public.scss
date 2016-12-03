@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* Scss Document */
+
+// 引入compass的库 
+@import "compass/css3";
+@import "blueprint/colors";
+@import 'compass/support';
+@import "compass/css3/box";
+
+//引入基础样式
+@import "include/reset.scss";
+@import "include/config.scss";
+@import "include/base.scss";
+
+
+html,body{ height: 100%;}
+body { background: $bg_color; border:none;  font-family: Arial, 'Microsoft YaHei'; *font-family: 'Microsoft YaHei';  font-size: 12px; line-height: 1.5; color: $font_color;}
+a{text-decoration: none;}
+a:link { color:$a_color;}
+a:visited {color:$a_visited_color; }
+a:hover {  color:$a_hover_color;}
+a:active {  color:$a_active_color;}
+.clearListStyle{margin: 0; padding: 0; list-style: none;    
+    li{ margin: 0; padding: 0; list-style: none;}    
+}
+.none { margin:0;}
+.block{ display: block;}
+
+.pull-left{float: left;}
+.pull-right{float: right;}
+.pull-center{ margin: 0 auto; @extend .clearfix;}
+.text-left{ text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
+
+.fz12{font-size: 12px;}
+.fz14{font-size: 14px;}
+.fz16{font-size: 16px;}
+.fz18{font-size: 18px;}
+.fz20{font-size: 20px;}
+.fz24{font-size: 24px;}
+
+.color-main{ color: $main_color;}
+.color-ornament{ color: $ornament_color;}
+.color-white{ color: #FFF;}
+.color-default{ color: $font_color;}
+.color-grey{ color: $grey_color;}
+.color-danger{ color:$danger_color;}
+.color-success{ color:$success_color;}
+.color-info{ color: $info_color;}
+.color-warning{ color:$warning_color; }
+
+.show{ display: block;}
+.hidden{display: none;}
+.mt10{margin-top: 10px;}
+.mt20{margin-top: 20px;}
+.clear { clear: both;}
+.clearfix { @include clearfix; }
+.ellipsis{@include ellipsis;}
+.ellipsis-2{@include ellipsis-2;}
+
+.num-font { font-family: Tahoma, Geneva, Arial, 'Microsoft YaHei', sans-serif;}
+
+.user-title-font{ font-size: 16px; color:$font_color; font-weight: normal;}   //标题
+.user-title-active{ padding-bottom: 5px;  color: $main_color; border-bottom: 2px solid $main_color;
+  &:link{ color:$main_color}}  //选中
+
+/*按钮*/
+
+.btn{@include inlineblock; padding: 6px 12px; border-width: 1px; border-style: solid; text-align: center; font-size: 14px; white-space: nowrap; vertical-align: middle; cursor: pointer; @include appearance(none);
+    &:hover{ text-decoration: none;}
+    &:active { @include box-shadow(inset 0 3px 5px rgba(0,0,0,.15)); }
+    &.disabled,&.disabled:visited,&.disabled:hover { background:#DDD; border-color:#AAA; color:#999; cursor:text;}
+    &.btn-sm{padding: 3px 6px; font-size: 12px;
+        &.btn-rounded{ @include border-radius(3px);}
+    }
+    &.btn-lg{padding: 10px 16px; font-size: 18px;
+        &.btn-rounded{ @include border-radius(6px);}
+    }
+    &.btn-rounded{@include border-radius(4px);}    
+    &.btn-border{ background: none;}
+    &.btn-borderless{ background: none; border: none;}
+    
+}
+.btn-default,.btn-default:visited{ background-color: $btn_default; border-color:#CCC; color: $font_color;
+    &:hover{background-color: hovercolor($btn_default, 5%); border-color: #BBB; color:$font_color;}
+    &:active{background-color: hovercolor($btn_default, 10%); border-color: #BBB; color:$font_color;}
+    &.btn-border{  color: $font_color;
+        &:active{ color: $font_color;}
+    }
+}
+.btn-primary{ @include btn($btn_primary,$btn_primary,#FFF);}
+.btn-ornament{ @include btn($btn_ornament,$btn_ornament,#FFF);}
+.btn-info{ @include btn($btn_info,$btn_info,#FFF);}
+.btn-danger{ @include btn($btn_danger,$btn_danger,#FFF);}
+.btn-success{ @include btn($btn_success,$btn_success,#FFF);}
+.btn-warning{ @include btn($btn_warning,$btn_warning,#FFF);}
+.btn-grey{ @include btn($btn_grey,$btn_grey,#FFF);}
+
+
+
+.btn-block {display:block; width: 100%; padding-left: 0; padding-right: 0; box-sizing: border-box;}
+
+
+
+/* 输入框 */
+.inp {min-height: 24px;  border:1px solid #ddd; padding:5px; font-size: inherit;  display: inline-block; background-color:#fff; }
+.inp-block { display:block; width:100%;}
+.inp-noborder{ border: none;}
+
+.pagination{ padding: 20px 0;
+	a, span{@include inlineblock; padding: 0 15px; border: 1px solid $border_color; line-height: 35px; vertical-align: middle; background:#fff;
+		&:hover{ background-color: #F8F8F8; text-decoration: none;}
+		&.active, &.current { background:$main_color; border-color:$main_color; color:#fff;}
+	}
+}
+
+.col-3{ width: 25%; float: left;}
+.col-4{ width: 33.33%; float: left;}
+.col-6{ width: 50%; float: left;}
+.col-8{ width: 66.66%; float: left;}
+.col-9{ width: 75%; float: left;}
+.col-12{ width: 100%; float: left;}
+
+/* 分隔符 */
+.separator { margin:0 10px; color:#ddd;}
+
+/* 弹出层 */
+.modal{width: 100%; height: 100%; display: none; position: fixed; left: 0; top: 0; z-index: 99;
+    .btn-close{ position: absolute; top: 10px; right: 10px; color: #CCC; cursor:pointer;
+        &:hover{ color: $main_color;}
+    }
+}
+.mask{width: 100%; height: 100%; background: url(../images/bg_mask.png);}
+.modal-wrap{width: 710px; height: 510px; margin:auto; background-color: #FFF; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 100;
+    .modal-side{ width: 164px; height: 100%; float: left; background-color: #e05a3f; overflow: hidden; position: relative;
+        .modal-t{width: 137px; height: 140px; margin: 45px auto 0; background: url(../images/login_line.png) no-repeat center; text-align: center;
+            h2{ padding-top: 50px; font-size: 30px; color: #FFF;}
+            .en{ font-size: 18px; color: #f1b5a8;}
+        }
+        .iconbg{ position: absolute; bottom: 0; right: 0;}
+    }
+    .modal-r{ width: 526px; padding: 10px; float: right;}
+    
+}
+
+.ctrl-modal{width: 396px; height: 290px; margin: -145px 0 0 -198px;  background-color: #FFF; position: absolute; left: 50%; top: 50%; z-index: 100;
+    h1{ font-size: 26px; color: #f2674b; text-align: center;}
+    table{width: 100%; height: 100%; border: none; text-align: center;}
+    td{ border: none;  padding: 0; vertical-align: middle;}
+    .btnbox{height: 96px; background-color: #fafafa; border-top: 1px solid #e0e0e0;}
+    .btn{width: 148px; height: 42px; margin: 0 6px;}
+    .btn-cancel{ background-color: #d0c2c0; color: #FFF;}
+    .gou{ color: #5db683; font-size: 68px; line-height: 1rem;}
+    .true{ color: #5db683; font-size: 20px;}
+    .cha{ color: #ec6262; font-size: 68px; line-height: 1rem;}
+    .false{ color: #ec6262; font-size: 20px;}
+}
+
+.modalcont{width: 420px;
+    .modalform{width: 324px; margin: 0 auto;}
+    .modal-header{ margin-top: 30px; font-size: 18px; color: $main_color; font-weight: bold;}
+    fieldset{width: 100%; height: 42px; margin-top: 16px;}
+    .fieldname{width: 65px; height: 40px; float: left; margin-right: -1px; padding: 0 10px; background-color: #f9f9f9; border: 1px solid $border_color; line-height: 40px; color: #949494; font-size: 14px;}
+    .fieldinp{width: 237px;  height: 42px;   padding: 0 10px; box-sizing: border-box;  background-color: #FFF; border: 1px solid $border_color; float: left; position: relative;  
+        &.full{width: 100%;}
+        select{ width: 100%; height: 42px; padding: 0; border: none; background: none; font-size: 14px;}
+        input{ width: 100%; height:40px; border: none; padding: 0; line-height: 40px; font-size: 14px;}
+        &.yzm{ padding-right:0;
+            input{ width: 120px;}
+        }
+        .Validform_checktip{ position: absolute; left: 0; top: 40px; color: #F00; font-size: 12px;}
+        &.imgyz{width: 130px;
+            input{ width: 100%; padding: 0;}
+        }        
+     }
+     .imgyanzheng{width: 94px; height: 40px; border: 1px solid #e7dddc; float: right;}     
+    .btn-yanzheng{ width: 90px;  height: 32px; float: right; margin: 4px 4px 0 0; background: #ccaca6; border: none; color: #FFF;}
+    .btn-submit{height: 42px; padding: 0;}
+    .btn-yzm{width: 100px; float: right; height: 42px; background: url(../images/bg_btn.jpg) repeat-x center bottom; border: 1px solid #DDD; font-size: 14px; color: #666;}
+    
+}
+
+
+
+.justify_fix { display: inline-block; width: 100%; height: 0; overflow: hidden; }
+.container{ width: $wrap_width; margin: 0 auto; @include clearfix;}
+.top{ height: 38px; background-color: #fff; line-height: 38px; color:#666; border-bottom:1px solid #eee; font-size:13px;
+	.pull-left { line-height:35px;}
+    .tel400{ font-size: 14px; font-weight:600;}
+    .icon{ font-size: 20px; margin-top:-3px;}
+    .icon-tel { width: 20px; height: 20px; line-height: 20px; text-align: center; display: inline-block; font-size: 16px; color: #666;}
+    a{ color:#666;}
+	.icon-sina { color:#999;
+		&:hover { color:$main_color;}
+	}
+	.icon-weiixn { color: #999; position:relative;
+		&:hover { color:$success_color;}
+		&:hover span { display:block;}
+		span { display:none; position:absolute; left:-62px; top:30px; background:#fff; padding:5px; border:1px solid #ddd; @include box-shadow(0px 10px 30px rgba(0,0,0,.1));
+			&:before { position: absolute; content: ""; overflow: hidden; border: 8px solid transparent; border-bottom-color: #ddd; margin-top: -16px; margin-right:-4px; top: 0; right: 50%;}
+		}
+		img { width:140px;}
+	}
+}
+
+.header{height: 98px; background: #FFF;
+    .logo{ margin-top: 24px;}
+    .loginreg{ margin-top: 34px;
+        .btn{width: 80px; height: 26px; padding: 0; line-height: 26px; margin-left: 10px;}
+    }
+    .nav{ margin-top: 34px; font-size: 16px;
+        li{ padding: 0 20px; display: inline-block; line-height: 30px;
+            &.active{
+                a{color: $main_color; border-bottom: 2px solid $main_color; font-weight: bold;}
+            }
+        }
+        a{@include a-color(#333,#333,$main_color,#333); display: block;}
+    }
+    .afterlogin{ width: 130px; height: 28px; padding:5px 10px; margin-left: 50px; margin-top: 30px; background-color: $main_color; line-height: 28px; color: #fff; position: relative; z-index: 10; font-size:16px;
+        .uhd{width: 28px; height: 28px; display: inline-block; float: left; margin-right: 5px; background: url(../images/user02.png) no-repeat center;}
+        .userdownmenu{width: 100%; display: none;  position: absolute; left: 0; top: 38px;
+			&:before { position: absolute; content: ""; overflow: hidden; border: 6px solid transparent; border-bottom-color: #fff; top: 0; right: 50%; margin-top: -10px; margin-right:-3px;}
+            .cont{padding: 10px 0; background-color: #fff; border:1px solid #ddd; @include box-shadow(0px 10px 30px rgba(0,0,0,.1));}
+            a{display: block; padding: 0 20px; line-height: 32px; font-size:14px;
+                &:hover{ background-color: #ff725f; color: #FFF;}
+            }
+        }
+    }
+}
+
+.footer{margin-top: 50px; background:#fff;  position: relative;
+	a { @include a-color(#777, #777, $main_color, #777);}
+	.siteinfo{ padding: 40px 0; border-top:1px solid #eee;}
+	.fnavs{
+		dl{width: 120px; float: left; padding-left:40px;}
+		.cn{ font-size: 16px; font-weight:normal;}
+		dd{ margin: 10px 0 0;
+			p{ margin: 0; padding: 0; line-height: 28px; font-size: 14px;}
+		}
+	}
+	.fqrcode { width:350px; margin-left:50px;
+		h3 { font-size:18px; font-weight:normal;}
+		p { color:#999; line-height:22px;}
+		img { float:left; width:120px; border:1px solid #ddd; margin-right:15px;}
+	}
+	.flinks {  text-align:center; border-top:1px solid #eee; padding:20px;
+		a { margin:0 20px; font-size:14px;}
+	}
+	.copy{ background-color: #eee; padding: 2px 0; text-align: center; color: #999;
+		div { margin:10px 0;}
+	}
+}
+.footer-feature { text-align:center; background:#fff; padding:25px 0;}
+
+.fcontact{width: 250px; padding-right: 30px; @include clearfix;
+    .tel400{ text-align: center; font-size: 34px; display: block; line-height: 34px; color:$main_color;}
+    .hotline{  font-size: 14px; text-align: center; color:#999; margin-top:5px;}
+    .qrcode{ float: right; margin-right: 40px;}
+    .btns{ text-align:center; margin-top:15px;
+        a { margin:0 2px;}
+    }
+}

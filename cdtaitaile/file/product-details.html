@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>商品详情</title>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/swiper.3.1.2.min.css">
+</head>
+<body>
+<!--头部-->
+<header class="flex">
+    <div class="l box-flex-1 text-left"><a href="" onclick="back()" class="icon-left"></a></div>
+    <div class="c box-flex-1 text-center"><h1>商品详情</h1></div>
+    <div class="r box-flex-1 text-right"><a href="#"></a></div>
+</header>
+<!--轮播图-->
+<div class="header-margin">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+            <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+            <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+            <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+            <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--商品详情-->
+<div class="section recharge-col product">
+    <p class="none product-price"><span class="icon-product"></span>积分:<span class="price">666</span></p>
+    <h1 class="none product-title">毅哥老司机专用飞机杯!德国进口</h1>
+    <div class="service-text">
+        <ul class="none flex flex-zx flex-hc">
+            <li class="box-flex-1"><span>质量可靠</span><span>正规渠道采购</span></li>
+            <li class="box-flex-1"><span>火速发货</span><span>快递哥哥快快的</span></li>
+            <li class="box-flex-1"><span>行货正品</span><span>放100个心</span></li>
+        </ul>
+    </div>
+</div>
+<!--商品信息-->
+<div class="section recharge-col product-info">
+    <h3 class="none">商品信息</h3>
+    <table>
+        <tr>
+            <td>品牌名称</td>
+            <td>老司机</td>
+        </tr>
+        <tr>
+            <td>商品名称</td>
+            <td>毅哥老司机专用飞机杯!德国进口</td>
+        </tr>
+        <tr>
+            <td>产地</td>
+            <td>中国</td>
+        </tr>
+        <tr>
+            <td>所需积分</td>
+            <td>800</td>
+        </tr>
+    </table>
+</div>
+<!--商品图片-->
+<div class="section recharge-col product-info">
+    <h3 class="none">商品图片</h3>
+    <div class="product-pic">
+        <img src="images/sdy.jpg" alt="图片加载中"/>
+        <img src="images/sdy.jpg" alt="图片加载中"/>
+        <img src="images/sdy.jpg" alt="图片加载中"/>
+    </div>
+</div>
+<!--底部-->
+<div class="footer-info text-center">
+    <div><a href="#">登录</a><span class="line">|</span><a href="#">首页</a></div>
+    <div class="company-name">老司机购物网</div>
+    <div class="company-info">Copyright xxxx.com || 2015-10-5</div>
+</div>
+<footer class="section recharge-col flex text-center flex-vc flex-hc">
+    <a href="shop.html"><div class="product-detail-num"><span class="shop-all-num fz12rem text-center color-white">1</span><span class="icon-shop"></span></div></a><button class="btn btn-block btn-primary box-flex-1 push-shop">加入购物车</button>
+</footer>
+<!--返回顶部-->
+<div class="come-back">top</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/swiper.3.1.2.jquery.min.js"></script>
+<script>
+    $(function(){
+        var mySwiper = new Swiper('.swiper-container',{
+            autoplay: 4000,
+            loop : true,
+            pagination : '.swiper-pagination',
+            paginationClickable :true,
+        })
+
+        var  push_shop = $(".push-shop");         //加入购物车按钮
+        var shop_all_num = $(".shop-all-num");   //购物车商品数量
+        push_shop.click(function(){
+            shop_all_num.addClass("shop-animate");
+            shop_all_num.html('2');
+            $.ajax({
+                type:"post",
+                url:"",
+                data:{},
+                dataType:"json",
+                success:function(data){
+                    var num = data.data;   //这里你返回一个当前用户购物车的数量
+                }
+            })
+        })
+    })
+
+
+</script>
+</html>

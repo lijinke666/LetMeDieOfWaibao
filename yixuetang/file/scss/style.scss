@@ -1,0 +1,774 @@
+@charset "utf-8";
+/* Scss Document */
+
+// 引入compass的库 
+@import "compass/css3";
+@import "blueprint/colors";
+@import "compass/support";
+@import "compass/css3/box";
+
+//引入基础样式
+@import "include/config.scss";
+@import "include/base.scss";
+
+/* 首页banner */
+.banner{width: 100%; height: 390px; min-width: $wrap_width; border-bottom: 1px solid #ededed; position: relative; overflow: hidden;
+    .banner-wrap{ width: 1920px; margin-left: -960px; position: absolute; top: 0; left: 50%;
+        ul{ position: absolute;}
+        li{width: 1920px; float: left;}
+    }
+    .banner-paging{width: 100%; position: absolute; left: 0; bottom: 15px; line-height: 0; font-size: 0; text-align: center;
+        a{width: 8px; height: 8px; margin: 0 5px; border:3px solid #DDD; @extend %radius-50p; display: inline-block;
+            &.on{ background: $main_color; border-color: $main_color;}
+        }
+    }    
+}
+
+/* 首页banner上的登录框 */
+.loginbox{ width: 300px; height: 330px; margin-left: 300px; background: #fff; background:rgba(255,255,255,.85); position: absolute; left: 50%; top: 30px; z-index: 4;
+    .user-head{width: 94px; height: 94px; margin: 20px auto 0; @extend %radius-50p; overflow: hidden;}
+    .user-name{margin-top: 10px; text-align: center; font-size: 14px; }
+    .sypm{ margin: 10px 10px 0; padding: 10px 0; border-top: 1px dashed #DDD; border-bottom: 1px dashed #DDD; text-align: center; overflow: hidden;
+        
+        li{width: 50%; float: left; border-right: 1px solid #EEE; margin-right: -1px;}
+        .number{ font-size: 16px; font-weight: bold; color: #ed392a;} 
+        .txt{ font-size: 14px; color: #999;}
+    }
+    .tousercenter{width: 220px; margin: 20px auto 0;
+        a{ font-size: 14px; text-align: center; line-height: 25px;}
+    }
+    .wel{margin-top: 10px; text-align: center; font-size: 14px; color: #999;
+         a:link{color: #999;}
+    }
+    .souyi{margin-top: 10px; font-size: 38px; text-align: center; font-weight: bold; color: $main_color;}
+    .bsy{margin-top: 50px; padding-bottom: 10px; font-size: 14px; color: $main_color; text-align: center; border-bottom: 1px dashed #DDD;}
+    
+}
+.guarantee{padding: 60px 0 40px; text-align: center; background:#fff;
+    li{ float: left;}
+    .item{width: 240px;
+        h4{ margin-top: 20px; font-size: 16px;}
+    }
+}
+
+.assets{ margin-top: 40px;
+    .assets-header{@include clearfix;
+        h2{ color: $ornament_color; display: inline-block; padding-left: 10px; border-left: 3px solid $ornament_color; font-size: 20px;}
+        .more{ float: right; color: #999; font-size: 14px; line-height: 36px;}
+    }
+    
+}
+.zt{height: 20px; vertical-align: middle;  padding: 0 8px; display: inline-block; background-color: $main_color; @extend %radius-10px; font-weight: bold; line-height: 20px; color: #FFF; font-size: 14px;}
+.assets-body{ margin-top: 20px;
+    ul{width: $wrap_width+16px;}
+    .item{width: 288px; float: left; margin-right: 13px; background-color: #FFF; border: 1px solid $border_color;
+        .title{ margin: 15px 11px 0; line-height: 28px;}
+        .zt{ margin-right: 5px;}
+        .name{ font-size: 16px; font-weight: bold; vertical-align: middle;}
+        .img{ height: 156px; margin: 10px 21px 0; background: url(../images/bg_loading.jpg) no-repeat center; @extend %radius-5px;
+            img{width: 100%; height: 100%; @extend %radius-5px;}
+        }
+        .cs{ height: 46px; padding:11px 0; margin: 0 11px; border-bottom: 1px dashed $border_color; overflow: hidden;
+            ul{width: 267px;}
+            li{width: 88px; float: left; border-right: 1px solid #EEE; text-align: center;
+                .number{display: block; font-size: 16px;}
+                .txt{display: block; color: #999;}
+            }
+        }
+        .ket{ margin: 20px 11px 0; font-size: 14px;}
+        .price{ color: $main_color; font-weight: bold;}
+        .progress{ height: 10px; margin: 0 11px; background-color: #e6e6e6; @extend %radius-5px; line-height: 0;
+            .bar{ height: 100%; margin-top: 5px; display: block; background: url(../images/bg_process.gif) repeat-x left center;  @extend %radius-5px;}
+        }
+        .btn-zc{height: 47px; display: block; margin-top: 25px; padding: 0 11px; background-color: #fdfdfd; border-top: 1px solid #f1f1f1; color: $ornament_color; line-height: 47px; font-size: 14px; text-align: center;
+            &:hover{ background-color: #fa784b; border-color: #fa784b; color: #FFF;}
+        }
+    }
+}
+.statistics{height: 346px; margin-top: 110px; background: url(../images/bg_tongji.jpg) no-repeat center; color: #FFF;
+    .statistics-header{text-align: center; padding-top: 30px;
+        h2{ display: inline-block; font-weight: normal; font-size: 22px;}
+        .en{ font-size: 22px;}
+    }
+    .statistics-body{margin-top: 64px; text-align: center;
+        .item{width: 200px; height: 160px; float: left; text-align: center;  background: url(../images/tj_line.png) no-repeat left top;
+            &:first-child{ background: none;}
+            .img{
+                img{ height: 50px;}
+            }
+            .name{ font-size: 14px; margin-top: 15px;}
+            .line{width: 34px; height: 2px; margin: 15px auto 0; background: #FFF; font-size: 0; line-height: 0;}
+            .number{ margin-top: 10px; font-size: 22px; font-weight: bold;}
+        }
+    }
+    
+}
+
+.pulic-header{@include clearfix;
+    h2{ display: inline-block; font-weight: normal; font-size: 22px;}
+    .en{ font-size: 22px; color: #999;}
+    .more{ float: right; color: #999; font-size: 14px; line-height: 38px;}
+}
+.league{ margin-top: 40px;}
+
+.league-header{ height: 24px; padding: 10px 0; border-bottom: 1px solid $border_color; line-height: 24px; font-size: 14px; color: #CCC;
+    .league-tab{
+        a{ color: #CCC;}
+        a.active{ color: $ornament_color; font-weight: bold;}
+    }
+    .pagenav{margin-left: 10px; font-weight: bold;
+        a{ display: inline-block; width: 20px; text-align: center; color: #CCC; font-weight: bold;
+            &:hover{ color: #999;}
+        }
+    }
+}
+.league-body{margin-top: 5px; font-size: 14px;
+    table{width: 100%; border: none; }
+    td{height: 44px; border: none; padding: 0 5px;}
+    .userhead{width: 26px;
+        img{width: 26px; height: 26px; @extend %radius-50p;}
+    }
+    .serial{width: 33px;
+        .number{ width: 23px; height: 23px; display: block; background: url(../images/bg_league.png) no-repeat center; text-align: center; color: #FFF; line-height: 23px;}
+    }
+    
+}
+.league-tabcont{
+    .item{ display: none;}
+}
+.league-zuixin{width: 428px; height: 322px; padding:0 10px; background-color: #FFF; border:1px solid $border_color;}
+.league-wealth{width: 718px; height: 322px; padding:0 10px; background-color: #FFF; border:1px solid $border_color;
+    .top3{ height: 67px; padding: 14px 0; border-bottom: 1px solid #ececec; overflow: hidden;
+        ul{width: 720px;}
+        li{width: 239px; height: 65px; float: left; border-right: 1px solid #EEE;
+            .number{width: 34px; height: 41px; margin:0 10px; display: block; float: left; background: no-repeat center; text-align: center; font-size: 16px; color: #FFF; line-height: 29px;}
+            .no1{ background-image: url(../images/bg_no1.png);}
+            .no2{ background-image: url(../images/bg_no2.png);}
+            .no3{ background-image: url(../images/bg_no3.png);}
+            .info{width: 170px; float: left; font-size: 14px;}
+            .name{ font-size: 16px;}
+            .price{ color: $ornament_color; font-weight: bold;}
+        }
+    }
+}
+.news{ margin-top: 40px;}
+.news-body{ margin-top: 10px; position: relative;
+    .prev{width: 32px; height: 32px; display: block; background: url(../images/btn_left.png) no-repeat center; position: absolute; left: -82px; top: 100px;}
+    .next{width: 32px; height: 32px; display: block; background: url(../images/btn_right.png) no-repeat center; position: absolute; right: -82px; top: 100px;}
+    .news-wrap{ overflow: hidden;}
+    ul{width: $wrap_width+20px;}
+    li{width: 283px; float: left; margin-right: 20px; background-color: #FFF; border: 1px solid $border_color;
+        .img{ width: 263px; height: 70px; padding: 10px;
+            img{ width: 100%; height: 100%;}
+        }
+        .title{height: 16px; border-left: 3px solid $ornament_color; padding: 0 10px; font-size: 16px; line-height: 16px; @include ellipsis;}
+        .desc{height: 60px; margin-top: 10px; padding:0 10px; color: #999; line-height: 20px; overflow: hidden;}
+        .dscb{ padding: 10px; @include clearfix;
+            .more{width: 70px; height: 22px; padding: 0; line-height: 22px;}
+            .date{float: right; font-size: 18px; color: #666;}
+        }
+        
+    }
+}
+
+.vnews-body{ margin-top: 10px;
+    ul{width: $wrap_width+20px;}
+    .item{width: 285px; height: 230px; float: left; margin-right: 20px; background-color: #FFF; overflow: hidden; position: relative;
+        &:hover{
+            .img img{@include transform(scale(1.1));}
+        }
+        .img{width: 285px; height: 230px; display: block;
+            img{ width: 100%; height: 100%; @include transition(all .5s);}
+        }
+        .play{width: 48px; height: 48px; background: url(../images/icon_play.png) no-repeat center; position: absolute; left: 50%; top: 68px; margin-left: -24px;}
+        .info{ width: 100%; padding: 6px 0; background: url(../images/bg_partnertxt.png); background: rgba(0,0,0,.6); position: absolute; left: 0; bottom: 0;
+            .title{ display: block; padding: 0 10px; @include ellipsis; font-size: 14px; color: #FFF;}
+            .desc{ height: 28px; display: block; margin-top: 3px; padding: 0 10px; color: #CCC; line-height: 14px; overflow: hidden; @include ellipsis-2;}
+        }
+    }
+}
+.partner { margin-top: 40px;}
+.partner-body { text-align: justify;
+	span { margin-bottom: 10px; display: inline-block; vertical-align: top;}
+	img { border: 1px solid #fff; transition: border .3s ease-in-out; -webkit-transition: border .3s ease-in-out;}
+	img:hover { border-color:#ffad2c;}
+}
+
+
+
+.assets-screen{margin-top: 40px; background: #FFF; border: 1px solid $border_color;
+    .screen-header{ height: 48px; background-color: #fcfcfc; border-bottom: 1px solid $border_color; line-height: 44px;}
+	.screen-tab{ font-size: 16px; background:#fcfcfc;
+		a{ display: block; float: left; width:140px; text-align:center; line-height: 48px; border-right:1px solid $border_color;}
+		a.active{ border-top: 3px solid $main_color; background:#fff; margin-top:-1px; line-height: 47px; color: $main_color; font-weight: bold;}
+	}
+    .screen-body{ padding:10px 20px; background: #FFF; font-size: 14px; @include ellipsis; }
+	.row-item{ overflow:hidden; padding: 12px 0; width:100%; border-top:1px dashed #eee;
+		&:first-child { border-top:none; }
+		.item-name{width: 60px; padding:3px 0; float:left; margin-left:20px; color:#777;}
+		.item-group{ overflow:hidden; margin:0 0 0 80px; list-style:none;
+			li{ margin: 0 10px; padding:3px; width:90px; float:left; text-align:center; list-style:none;}
+			a.active { background-color: $main_color; color: #FFF; padding:3px 6px; @extend %radius-2px; line-height: 20px;}
+		}
+	}
+}
+.tequan{height: 252px; margin-top: 16px; background-color: #FFF; border: 1px solid $border_color;
+    .tequan-cont{width: 880px; padding: 0 20px; float: left;
+        .tit{ padding: 15px 0; border-bottom: 1px dashed $border_color;
+            h2{ vertical-align: middle; margin-right: 10px; display: inline-block; color: #e6433b; font-size: 22px;}
+            .tqb{height: 24px; display: inline-block; margin-right: 10px;  padding: 0 10px; background-color: #ffea5f;@extend %radius-12px; vertical-align: middle; line-height: 24px; color: #e6473f; font-weight: bold;}
+            .notice{height: 24px; display: inline-block; margin-right: 10px;  padding: 0 10px; background-color: #63c9b7; @extend %radius-12px; vertical-align: middle; line-height: 24px; color: #FFF; font-weight: bold;}
+        }
+        .tequan-group{ padding: 20px 0; border-bottom: 1px dashed $border_color; @include clearfix; 
+            li{width: 20%; float: left; padding-left: 20px; border-right: 1px solid #eaeaea; box-sizing: border-box;
+                h2{font-size: 22px; margin: 0;}
+                p{ margin:5px 0 0; font-size: 14px;}
+                &:last-child{ border-right: none;}
+            }
+        }
+        .tequan-cs{margin-top: 15px; @include clearfix; 
+            li{width: 50%; float: left; font-size: 14px; color: #666; line-height: 2;}
+        }
+    }
+    .tequan-r{width: 278px; height: 100%; float: right; background: #fffdf1 url(../images/jc.jpg) repeat-y left top; position: relative; text-align: center;
+        .tag{width: 61px; height: 61px; background: url(../images/tqb.png)no-repeat center; position: absolute; top: 0; right: 0;}
+        .img{ margin-top: 30px;}
+        .btn{width: 210px; height: 42px; margin: 10px auto 5px; padding: 0; box-sizing: border-box; line-height: 42px; font-size: 16px;}
+    }
+}
+.assets-list{
+    .item{ margin-bottom: 40px;
+        .idnumber{ margin: 4px 11px 0; color: #999; font-size: 14px;}
+        .assets-percent{ height: 51px; padding: 20px 11px 11px;
+            ul{width: 100%;}
+            li{width: 50%; float: left; display: table;
+                .percent{ display: table-cell; width: 52px; height: 51px;  padding:0 5px; background: no-repeat center; text-align: center; line-height: 51px; color: #d49a8a;}
+                .percent-80{ background-image: url(../images/bg_percent_80.png);}
+                .info{ display: table-cell; padding:0 5px; vertical-align: middle;}
+                .number{ display: block; color: #505050; font-size: 14px; @include ellipsis;}
+                .txt{ display: block; color: #999;  @include ellipsis;}
+            }
+        }
+        .step{ padding: 11px 0; margin: 0 11px;  border-bottom: 1px dashed $border_color; 
+            .step-state{width: 234px; height: 44px; margin: 0 auto; padding-bottom: 22px; display: table;           
+                .step-quan{width: 44px; height: 44px; float: left; background: #dfd9d6 url(../images/gou.png) no-repeat center; @extend %radius-50p; position: relative;
+                    .step-txt{width: 80px; margin-left: -40px; text-align: center; color: #999; line-height: 1; position: absolute; top: 54px; left: 50%;}
+                    &.complete{ background-color: #d9967f;}
+                    &.active{ background-color: $main_color;}
+                }
+                .line{ width: 43px; height: 4px; float: left; margin: 20px 4px; background-color:#dfd9d6; line-height: 0;
+                    &.active{ background-color: $main_color;}
+                }
+            }
+            
+        }
+        .countdown{ height: 42px; padding:15px 11px 5px; text-align: center; font-size: 16px; color: #999; line-height:20px; overflow: hidden;
+            strong{font-size: 26px; color: $main_color;}
+        }
+        .btn-zc{ margin-top: 15px;
+            &.details:hover{ font-size: 16px; font-weight: bold;}
+        } 
+    }
+    
+}
+.loadmore{ height: 42px; padding: 0; line-height: 42px;}
+.path{ margin: 20px 0; font-size: 14px;
+	.active { color:#666;}
+}
+.assets-main{ width: 1200px; float: left;}
+.assets-info{ padding: 10px; background: #FFF; border: 1px solid $border_color; @include clearfix;
+    .asstes-img{ width: 380px; height: 316px; float: left;
+        img{ width: 100%; height: 100%;}
+    }
+    .info{width: 450px; float: right; margin-right: 10px;
+        .info-header{ padding: 0 10px;
+            .asstes-name{ font-size: 24px; display: inline-block; vertical-align: middle; font-weight: normal;}
+            .city{ float: right; color: $main_color; margin-top: 12px;}
+        }
+        .info-id{ font-size: 16px; color: $grey_color; padding: 0 10px;}
+        .info-par{margin-top: 10px; text-align: center;  border-top: 1px dashed $border_color;      
+            li{ width: 33%; height: 50px; float: left; padding: 12px 0; border-bottom: 1px dashed $border_color; line-height: 25px; overflow: hidden;}
+            a{ display: block; height: 100%; border-right: 1px solid #EEE;}
+            .number{ font-size: 16px; display: block; color: #4b4b4b;}
+            .txt{ font-size: 14px; display: block; color: #8f8f8f;}
+        }
+        .buy{margin-top: 20px; padding: 0 10px;
+            .btn{ width: 218px;}
+        }
+    }
+}
+.tzmodal{
+    .modal-wrap{width: 584px; height: 390px;}
+    .popup-top{ height: 111px; background-color: #FAFAFA; border-bottom: 1px solid #e0e0e0; text-align: center;
+        .popup-top-img{width: 54px; height: 54px; margin:26px 10px 0 0; vertical-align: middle; display: inline-block; background: $main_color; @extend %radius-50p; font-size: 36px; color: #FFF; line-height: 54px; text-align: center;}
+        .popup-top-many{ display: inline-block; margin-top:26px ; vertical-align: middle; text-align: left;}
+    }
+    .popup-input{ margin: 40px 30px 0;
+        .inp{ height: 42px; line-height: 40px; box-sizing: border-box; color:#999;}
+    }
+    .popup-profit{ margin: 15px 30px 0; @include clearfix; font-size: 14px; color: #666;}
+    .popup-confirm{margin: 30px 30px 0;}
+    .popup-agreement{margin: 30px 30px 0; text-align: center; color: #999;}
+    
+}
+.assets-profile{
+    background: #FFF;
+    border: 1px solid $border_color;
+    margin-top: 10px;
+    .profile-tab{
+        height: 48px;
+        font-size: 16px;
+        border-bottom: 1px solid $border_color;
+        background: #fcfcfc;
+        a{
+            display: block;
+            float: left;
+            width: 140px;
+            text-align: center;
+            line-height: 48px;
+            border-right: 1px solid $border_color;
+            &.active{
+                border-top: 3px solid $main_color;
+                background: #fff;
+                margin-top:-1px;
+                line-height: 47px;
+                color: $main_color;
+                font-weight: bold;
+            }
+        }
+    }
+    .profile-content{ padding: 25px;  @include clearfix;}
+    .profile-item{ display: none;
+       h4{
+           color: $a_visited_color;
+           font-size: 17px;
+       }
+        .profile-info{
+            width: 100%;
+            height: 300px;
+            background: $bg_color;
+            margin-top:8px;
+            ul{
+                padding: 10px;
+                margin-left: 0px;
+                li{
+                    float: left;
+                    font-size: 14px;
+                    color:$grey_color;
+                    margin-right:35px;
+                    span{
+                        color:$font-color;
+                    }
+                }
+            }
+        }
+    }
+    .profile-info-div{
+        width: 65px;
+        text-align: center;
+        float: left;
+        margin-right:20px;
+        .profile-info-icon{
+            width: 65px;
+            height: 60px;
+            background:$border_color;
+            @extend %radius-5px;
+            margin: 35px 15px 0px 10px;
+        }
+        .profile-info-text{
+            width: 65px;
+            margin-top:5px;
+            color:$success_color;
+            margin-left: 10px;
+
+        }
+
+    }
+    .canshu{ padding: 20px; background-color: #f9fbfd; border: 1px solid $border_color; font-size: 14px;
+        table{width: 100%; border: none;}
+        td{border: none; padding: 10px;}
+        .name{width: 100px;  color: #999;
+            &:before{ width: 6px;  height: 6px;  margin-right: 10px;  display: inline-block;  vertical-align: middle;  content: ""; background-color: #e7cbc7; @extend %radius-50p;}
+        }
+    }
+    .profile-title{ margin-top: 20px; border-left: 3px solid $ornament_color; padding-left: 10px; line-height: 1; font-size: 14px; color: $ornament_color; font-weight: bold;}
+    
+    .diaocha{font-size: 14px; margin-top: 15px;
+        table{width: 100%; border: none;}
+        td{border: none; padding:8px; vertical-align: top;}
+        .name{width: 100px;  color: #5d5d5d; 
+            &:before{ width: 6px;  height: 6px;  margin-right: 10px;  display: inline-block;  vertical-align: middle;  content: ""; background-color: #ec998e; @extend %radius-50p;}
+        }
+    }
+    .tztj{ font-size: 16px; color: #5d5d5d; @include clearfix;
+        .timer{ font-weight: bold; font-size: 14px; color: #e85f4d;
+            strong{width: 34px; height: 32px; display: inline-block; margin: 0 6px; vertical-align: middle; background: url(../images/bg_time.png) no-repeat center; font-size: 18px; color: #FFF; text-align: center; line-height: 32px;}
+        }
+    }
+    .tzjl{font-size: 14px; margin-top: 20px;
+        table{width: 100%; border: none;}
+        td{ border-color: #e5e5e5; padding: 10px; text-align: center;}
+        thead td{ background-color: #fcfcfc; font-weight: bold; color: #7b7b7b;}
+    }
+    .tzctrl{ margin-top: 20px; @include clearfix;}
+    .pagination{ padding: 0; font-size: 12px; float: left;
+        li{ margin: 0 4px 0 0;
+            a{width: 24px; height: 24px; padding: 0; line-height: 24px;}
+        }
+    }
+    .topage{
+        input{width: 60px; height: 24px; padding: 0 10px; box-sizing: border-box; background: #FFF; border: 1px solid #DDD;}
+        button{ height: 24px; font-size: 12px;}
+    }
+    .dcjg{
+        .item{ margin-right: 10px; margin-bottom: 10px; @include ellipsis;
+            .kuang{width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 8px; background-color: #fafafa; border: 1px solid $border_color; @extend %radius-2px;}
+            &.active {
+                .kuang{ background: #ffcccc url(../images/ck.png) no-repeat center; border-color: #F00;}
+            }
+        }
+    }
+    .profile-pic{ margin-top: 10px;
+        img{ max-width: 100%;}
+    }
+}
+.asstes-other{width: 296px; float: right; background: #FFF; border: 1px solid $border_color; margin-top: 10px; 
+    .rec-header{height: 46px; padding: 0 10px; line-height: 46px; font-size: 14px; background-color: #fcfcfc; border-bottom: 1px solid $border_color;
+        h5{ display: inline-block; font-size: 14px; color: $ornament_color; border-bottom: 2px solid $ornament_color; line-height: inherit;}
+    }
+    .assets-rec{ width: 276px; margin: 0 auto; padding-bottom: 20px;
+        li{ margin-top: 10px;
+            .zt.zt-sm{ font-size: 12px; height: 14px; padding: 0 5px; line-height: 14px; font-weight: normal; @include border-radius(7px); }
+            .img img{ width: 100%; height: 94px;}
+            .name{font-size: 14px; vertical-align: middle;}
+        }
+        
+    }
+    .lookmore{ height: 48px; display: block; background-color: #fcfcfc; text-align: center; line-height: 48px; font-size: 14px; border-top: 1px solid $border_color;
+        &:hover{ background-color: $ornament_color; color: #FFF;}
+    }
+}
+.login{ margin-top: 64px; padding: 10px; background: #FFF; border: 1px solid $border_color; @include clearfix;}
+.ad_login{width: 742px;
+    img{ max-width: 742px;}
+}
+
+
+/* 登录框 */
+.logincont{width: 420px;
+    .loginform{width: 324px; margin: 0 auto;}
+    .login-header{ margin-top: 30px; font-size: 18px; color: $main_color; font-weight: bold;}
+    fieldset{width: 100%; height: 42px; margin-top: 16px;}
+    .fieldname{width: 65px; height: 40px; float: left; margin-right: -1px; padding: 0 10px; background-color: #f9f9f9; border: 1px solid $border_color; line-height: 40px; color: #949494; font-size: 14px;}
+    .fieldinp{width: 237px;  height: 42px;   padding: 0 10px; box-sizing: border-box;  background-color: #FFF; border: 1px solid $border_color; float: left; position: relative;
+        input{ width: 100%; height:40px; border: none; padding: 0; line-height: 40px; font-size: 14px;}
+        &.yzm{ padding-right:0;
+            input{ width: 120px;}
+        }
+        &.imgyz{width: 130px;
+            input{ width: 100%; padding: 0;}
+        }        
+    }
+    .imgyanzheng{width: 94px; height: 40px; border: 1px solid #e7dddc; float: right;}
+    .ih{margin-top: 20px; display: block; text-align: center; font-size: 14px; font-weight: bold; color: $main_color;}
+    .btn-yanzheng{ width: 100px; height: 40px; float: right; background: #ccaca6; border: none; color: #FFF; border-left:1px solid $border_color;}
+    .btn-submit{height: 42px; padding: 0;}
+    .otherlogin{text-align: center; margin-top: 40px;
+        li{width: 33.3%; float: left;
+            img{ margin-bottom: 5px;}
+            .desc{ color: #aeaeae; display: block;}
+        }
+    }
+    .longinlink{ margin-top: 30px; text-align: center;}
+}
+.floatdiv { width: 54px; background: #FFF; border: 1px solid $bg_color; position: fixed; right: 40px; top: 160px; text-align: center;
+    a { display: block; height: 54px; background: #FFF; border-top: 1px solid $bg_color; line-height: 54px; font-size: 28px; @include a-color(#d0d0d0,#d0d0d0,#7ddf8b,#7ddf8b);
+        &:active{ background-color: #F8F8F8;}
+    }
+    a:first-child{ border-top: none;}
+    .totop { display: none; border-top: 1px solid $bg_color; height: 60px; font-size: 12px; line-height: 1; overflow: hidden;
+
+            .icon{margin-top: 6px; font-size: 28px; display: block;}
+     
+    }
+}
+.calculator-popup {
+	.title { height: 65px; margin: 0; background-color: #FAFAFA; border-bottom: 1px solid #e0e0e0; font-size: 22px; font-weight: bold; color: $main_color; text-align: center; line-height: 65px; }    
+	.jisuan-cont { width: 405px; margin: 35px auto 0;
+		fieldset { padding: 12px 0;}
+		.fieldname { width: 65px; height: 40px; float: left;  padding: 0 10px; line-height: 40px; color: #666; font-size: 14px; text-align: center; background: #eee; border: 1px solid #ddd; border-right:none;}
+		.fieldinp { width: 300px; height: 40px; float: left; padding: 0 8px; border: 1px solid $border_color; line-height: 40px; font-size: 14px; position: relative;
+			.inp { width: 240px; height: 40px; float: left; padding: 0; border: none;}
+			select.inp { width: 100%;}
+		}
+		.btn{ height: 40px; margin-top: 20px;} 
+	}
+	.calculator-result { text-align:center; margin-top:20px; font-size:20px;}
+}
+.bg-white{ background-color: #FFF;}
+.safe-box{ padding: 50px 0; border-bottom: 1px solid #DDD;}
+.ptsafe{ margin-top: 70px; padding-bottom: 30px;
+    li{width: 33.33%; float: left; padding: 0 40px; box-sizing: border-box;
+        .img{ float: left; margin: 0 30px 0 0;}
+        h2{ margin: 0; font-size: 20px;}
+        p{ color: #999; font-size: 14px; margin:10px 0 0; line-height: 1.4;}
+    }
+}
+.baozhang{ margin-top: 30px;
+    li{width: 50%; float: left; padding: 45px 40px; box-sizing: border-box;
+        .img{ float: left; margin: 0 30px 0 0;}
+        h2{ margin:20px 0 0; font-size: 22px; color: $main_color;}
+        p{  font-size: 16px; margin:15px 0 0;}
+    }
+}
+.fengkong{
+    .item{margin-top: 70px;}
+}
+.ysbh{margin-top: 70px; padding-bottom: 30px;
+    li{width: 33.33%; float: left; padding: 0 10px; box-sizing: border-box;
+        .img{ float: left; margin: 0 10px 0 0;}
+        h2{ margin:10px 0 0; font-size: 18px;}
+        .line{width: 40px; height: 2px; margin:10px 0 0 110px; line-height: 0; font-size: 0;}
+        p{ color: #999; font-size: 14px; margin:10px 0 0;}
+    }
+}
+.youshi{ margin-top: 70px;
+    li{width: 33.33%; float: left; padding: 0 20px; box-sizing: border-box; text-align: center;
+        h2{ font-size: 20px; margin: 30px 0 0;}
+        .desc{ font-size: 14px; margin: 15px 0 0;}
+        .more{width: 90px; height: 24px; background-color: #e1e1e1; @extend %radius-12px; line-height: 24px; display: inline-block;
+            &:visited{ color: #333;}
+            &:hover{ background-color: $ornament_color; color: #FFF;}
+        }
+    }
+}
+
+.step-group{ text-align: center; margin-top: 70px;
+    .point{display: inline-block; margin: 60px 40px 0; vertical-align: top;}
+    .step-item{display: inline-block;
+        .cont{width: 160px; display: inline-block;  cursor: pointer;}
+        .icon{display: block; height: 158px; border: 2px solid $main_color; @extend %radius-50p; font-size: 72px; line-height: 158px; color: $main_color;}
+        .txt{margin-top: 20px; color: #c3b3b3; font-size: 22px;}
+        .arrow{width: 107px; height: 20px; margin: 60px 60px 0; vertical-align: top; background: url(../images/arrow_grey.png) no-repeat center; display: inline-block;}
+        &.active{
+            .icon{ background-color: $main_color; color: #FFF;}
+            .txt{ color: $main_color;}
+        }
+    }
+}
+.step-tab{ margin-top: 60px; position: relative;
+    .step-wrap{width: 983px; margin: 0 auto; text-align: center;
+        .item{ display: none;
+            &.active{ display: block;}
+        }
+        .img{ width: 983px; height: 493px;}
+        .text{margin-top: 20px; font-size: 16px; font-weight: bold; color: $ornament_color;}
+    }
+    .button{ position: absolute; top:50%; font-size: 60px; margin-top: -30px; color: #CCC; cursor: pointer;
+        &:hover{ color: #999;}
+    }
+    
+    .btn-prev{ left: 0;}
+    .btn-next{ right: 0;}
+}
+
+//新版  信息展示部分
+.assets-new-info{
+    width: $wrap_width;      //1200px
+    height:335px;
+    background:white;
+    .new-info-top{
+        height: 70px;
+        line-height: 70px;
+        padding:0px 35px;
+        border-bottom: 1px solid $border_color;
+        .new-info-type1{
+            margin-left: 15px;
+            background: $main_color;
+            color:white;
+            min-width: 52px;
+            height:20px;
+        }
+        .new-info-type2{
+            border: 1px dashed $info_color;
+            margin-left: 5px;
+            background: lighten($main_blue,10%);
+            color:$info_color;
+            min-width: 51px;
+            height:19px;
+        }
+        .assets-new-info-title{
+            font-size:24px;
+            color:$font_color;
+        }
+        .assets-new-info-type{
+            display: inline-block;
+            @extend %radius-2px;
+            line-height: 20px;
+            padding:0px 3px;
+        }
+        .assets-new-info-address{
+            margin-left: 30px;
+            color: $main_color;
+        }
+        .assets-new-info-id{
+            margin-left: 20px;
+            color: $grey_color;
+        }
+        .assets-new-info-date{
+            margin-left: 250px;
+            color: $grey_color;
+        }
+    }
+}
+
+
+/*投资图片和信息，进度条展示*/
+.new-invest{
+    padding: 35px;
+    div{
+        float: left;
+    }
+}
+.new-invest-img{
+    width: 222px;
+    height:185px;
+    @extend %radius-5px;
+    overflow: hidden;
+}
+.new-invest-info{
+    width: 520px;
+    height:180px;
+    margin-top:-15px;
+    margin-left: 15px;
+    ul{
+        height: 60px;
+        margin-bottom: 18px;
+    }
+    li{
+        padding: 0 25px ;
+        display: inline-block;
+        .new-invest-info-p1{
+            font-size: 14px;
+            color:$font_color;
+        }
+        .new-invest-info-p2{
+            font-size: 16px;
+            color:$font_color;
+            span{
+                font-family: Tahoma, Geneva, sans-serif;
+                color:$a_visited_color;
+                font-size: 27px;
+                font-weight: bold;
+                margin-right:5px;
+            }
+            .new-invest-info-p2{
+                font-size: 16px;
+                color:$font_color;
+                span{
+                    font-family: Tahoma, Geneva, sans-serif;
+                    color:$a_visited_color;
+                    font-size: 27px;
+                    font-weight: bold;
+                    margin-right:5px;
+                }
+            }
+            .new-invest-info-p2{
+                font-size: 16px;
+                color:$font_color;
+                span{
+                    color:$a_visited_color;
+                    font-size: 27px;
+                    font-weight: bold;
+                    margin-right:5px;
+                }
+            }
+        }
+    }
+    .new-invest-list1{
+        width: 155px;
+        border-right:1px dashed $border_color;
+    }
+    .new-invest-list2{
+        width: 95px;
+        border-right:1px dashed $border_color;
+    }
+    .new-invest-list3{
+        width: 95px;
+    }
+}
+
+.new-invest-text{
+    width:520px;
+    height:70px;
+    border-top: 1px dashed $border_color;
+    font-size: 14px;
+    margin-top:50px;
+    div{
+        width: 240px;
+        height: 30px;
+        line-height: 30px;
+        margin-left: 20px;
+        span{
+            color:$grey_color;
+        }
+    }
+    .new-invest-mar{
+        margin-top:13px;
+    }
+    .new-invest-mar{
+        margin-top:13px;
+    }
+}
+
+.immediately-investment{
+    width: 320px;
+    height: 210px;
+    //float: left;
+    border-left:1px solid $border_color;
+    margin-left: 40px;
+    text-align: center;
+    h2{
+        color:$progress_bar_color;
+        font-weight: normal;
+        margin-left: 25px;
+    }
+    .progress-bar-box{
+        width: 250px;
+        height: 12px;
+        background: #D5D5D5;
+        @extend %radius-10px;
+        margin:20px 0px 0px 52px;
+        position: relative;
+        span{
+            display: inline-block;
+            height: 12px;
+            @extend %radius-10px;
+            position: absolute;
+            left:0;
+            top:0;
+            -webkit-animation: running 10s;
+            //background: $progress_bar_color linear-gradient(135deg,$bg_color 25%,transparent 25%,transparent 50%,$bg_color 50%,$bg_color 75%,transparent 75%,transparent) repeat scroll 0 0 / 50px 50px;
+            background:$progress_bar_color ;
+        }
+    }
+    .progress-bar-money{
+        width: 100%;
+        color:$font-color;
+        margin-top:6px;
+        font-size: 13px;
+        text-align: left;
+        padding-left: 52px;
+    }
+    .immediately-investment-button{
+        width: 250px;
+        height: 45px;
+        margin-top:25px;
+        @include btn($main_color,none,white);
+        font-size: 18px;
+        margin-left: 35px;
+    }
+}
+
+
+

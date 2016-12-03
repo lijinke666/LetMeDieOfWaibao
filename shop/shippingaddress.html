@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if IE]>
+    <script src="js/html5.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="register">
+    <div class="rs-content">
+        <div class="rs-Progress">
+            <img src="images/logo.png">
+            <ul class="fz16">
+                <li class="active">Cart</li>
+                <li class="active">Shipping&Billing</li>
+                <li>Order confirmation</li>
+                <li>Payment</li>
+            </ul>
+        </div>
+        <p class="fz16">Shipping & Billing</p>
+        <p class="rs-border"></p>
+        <p class="rs-sp"><span>Shipping Address</span></p>
+        <p class="rs-border"></p>
+        <p class="fz16 color-info">Register a New Account</p>
+        <form  method="#" name="contact-shipping" action="http://www.baidu.com">
+            <p><span>First Name * </span><input id="lastname" name="lastname" type="text" minlength="2" required="true"></p>
+            <p><span>Surname * </span><input id="username" name="username" type="text"minlength="2" required="true"></p>
+            <p><span>Email Address *</span><input id="cemail" type="email" name="email"  required="true"></p>
+            <p><span>Password * </span><input id="password" name="password" type="password" minlength="6" maxlength="16" required="true"></p>
+            <p><span>Additional Address* </span><input id="Additional" name="Additional" type="text" required="true"></p>
+            <p><span>Street Address * </span><input id="Street" name="Street" type="text" required="true"></p>
+            <p><span>City * </span><input id="City" name="City" type="text" required="true"></p>
+            <p><span>ZIP/Post Code * </span><input id="Code" name="Code" type="text" required="true"></p>
+            <p>Use shipping address as the billing address?<input name="Fruit" type="checkbox" value=""/></p>
+        <p class="rs-border"></p>
+        <!--<p class="rs-sp"><span>Shipping method</span></p>-->
+            Shipping method<br />
+            <p><label><input name="Fruit" type="radio" value="" /><span>Standard Shipping</span><span>Free shipping </span><span>7-10 business days</span></label></p>
+            <p><label><input name="Fruit" type="radio" value="" /><span>EMS Express Mail Service</span><span>$19.55</span><span>5-7 business days</span></label></p>
+            <p><label><input name="Fruit" type="radio" value="" /><span>Expedited Shipping Service</span><span>$10.76</span><span>3-5 business days</span></label></p>
+            <P><label><input name="Fruit" type="radio" value="" /><span>DHL Express</span><span>$22.35</span><span>2-3 business days</span> </label></P>
+            <p><button class="rl-buTTOn" type="button">Back</button><button id="bottom" class="submit" type="submit">Continue Checkout</button></p>
+        </form>
+        <div class="His-footer fz14 text-center">
+            <p><img src="images/renzheng.jpg"></p>
+            <p>Copyright @ 2014 - 2016 okspare.com. All right reserved.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    $("form[name='contact-shipping']").validate({
+        submitHandler: function (form) {
+            Alert("提交成功!", true);
+            form.submit();
+        }
+    });
+</script>
+</html>

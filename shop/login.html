@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if IE]>
+    <script src="js/html5.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="register">
+    <div class="rs-content">
+        <img src="images/logo2.png">
+        <p class="fz16">Select your Account</p>
+        <p class="rs-border"></p>
+        <p class="rs-sp fz14 loginToggle color-info"><span>Login to Your Existing Account</span><i class="icon-youjiantou pull-right rotate-transform"></i></p>
+        <div class="loginToggle-hidden">
+            <p class="rs-border"></p>
+            <form method="#" name="contact-login" action="http://www.baidu.com">
+                <p><span>Email Address *</span><input class="inp" name="email" id="email" email="true" required="true"></p>
+                <p><span>Password * </span><input class="inp" name="password" id="password" minlength="6" maxlength="16" required="true"/></p>
+                <p><button type="submit" class="submit btn btn-success" >login</button></p>
+            </form>
+        </div>
+        <p class="rs-border"></p>
+        <p class="rs-sp fz16 loginToggle"><span>Register a New Account</span> <i class="icon-youjiantou pull-right"></i></p>
+        <div class="loginToggle-hidden loginToggle-show">
+            <form method="#" name="contact-register" action="http://www.baidu.com">
+                <p><span>First Name * </span><input class="inp" id="lastname" name="lastname" minlength="2" required="true"></p>
+                <p><span>Surname * </span><input class="inp" id="username" name="username" type="text" required="true"></p>
+                <p><span>Email Address *</span><input class="inp"  name="email" id="email1" email="true" required="true"></p>
+                <p><span>Password * </span><input class="inp" type="password" name="password" id="password2" minlength="6" maxlength="16" required="true"/></p>
+                <p><button type="submit" class="submit btn btn-success" >Register</button></p>
+            </form>
+        </div>
+        <p class="rs-border"></p>
+        <p class="rs-sp"><a href="#">Continue as Guest</a><span class="icon-youjiantou color-info"></span></p>
+        <div class="His-footer fz14 text-center">
+            <p><img src="images/renzheng.jpg"></p>
+            <p>Copyright @ 2014 - 2016 okspare.com. All right reserved.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    $(function(){
+        var $loginToggle = $(".loginToggle");  //切换
+        $loginToggle.on("click",function(){
+            var $this = $(this);
+            $this.addClass("color-info").siblings(".loginToggle").removeClass("color-info");
+            $this.find('.icon-youjiantou').addClass("rotate-transform").parent().siblings(".loginToggle").find('.icon-youjiantou').removeClass('rotate-transform');
+            $this.next(".loginToggle-hidden").slideDown().siblings(".loginToggle-hidden").slideUp();
+        });
+        $("form[name='contact-login']").validate({
+            submitHandler:function(form){
+                Alert("提交成功!",true);
+                form.submit();
+            }
+        });
+        $("form[name='contact-register']").validate({
+            submitHandler: function (form) {
+                Alert("提交成功!", true);
+                form.submit();
+            }
+        });
+    })
+
+</script>
+</html>

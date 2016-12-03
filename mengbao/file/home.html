@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>萌宝大赛</title>
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/loading.js"></script>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/swiper.3.1.2.min.css"/>
+</head>
+<body>
+<!--头部倒计时-->
+<header class="flex">
+    <div class="c box-flex-1 text-center">
+        <h1 class="endTime" data-endTime="2016/8/5 00:00:00">活动剩余时间
+        <span id="d"></span>天<span id="h"></span>时<span id="m"></span>分<span id="s"></span>秒
+        </h1>
+    </div>
+</header>
+<footer class="section flex text-center flex-vc flex-hc">
+    <a href="/" class="box-flex-1">
+        <div class="icon-home active"></div>
+        <span class="active">首页</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-baoming"></div>
+        <span>报名</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-sousuo"></div>
+        <span>搜索</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-hezuo"></div>
+        <span>大赛合作</span>
+    </a>
+</footer>
+<div class="header-margin body footer-margin">
+    <!--轮播图-->
+    <div class="header-margin">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+            </div>
+        </div>
+    </div>
+
+    <!--赛区招募中-->
+    <p class="section text-center recharge-col fz2rem"><strong>中国赛区各大省级、市级上去火热招募中</strong></p>
+    <!--首页展示图片-->
+    <div class="section recharge-col border-top-none home-show-img">
+        <p><img src="images/home1.jpg" alt=""/></p>
+        <p><img src="images/home2.jpg" alt=""/></p>
+        <p><img src="images/home3.jpg" alt=""/></p>
+        <p><img src="images/home4.jpg" alt=""/></p>
+        <p><img src="images/home5.jpg" alt=""/></p>
+        <p><img src="images/home6.jpg" alt=""/></p>
+
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.3.1.2.jquery.min.js"></script>
+<script>
+    $(function(){
+        //首页幻灯片
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 4000,
+            loop: true,
+        });
+
+        //倒计时
+        function loadTime(){
+            setTimeout(function(){
+                var nowTime = new Date().getTime(),      //当前时间
+                    endTime = $('.endTime'),
+                    EndTime = new Date(endTime.attr("data-endTime")).getTime(),       //截止时间
+                    time = EndTime - nowTime;
+
+                var d = Math.floor(time / 1000 /60 /60 / 24);
+                time -= d * 1000 *60 *60 *24;
+                var h = Math.floor(time / 1000 / 60 / 60);
+                time -= h * 1000 * 60 * 60;
+                var m = Math.floor(time / 1000 / 60);
+                time -= m * 1000 * 60;
+                var s = Math.floor(time / 1000);
+                if (m < 10) {
+                    m = "0" + m;
+                }
+                if (h < 10) {
+                    h = "0" + h;
+                }
+                if (s < 10) {
+                    s = "0" + s;
+                }
+                var dd = $("#d"),
+                        hh = $("#h"),
+                        mm = $("#m"),
+                        ss = $("#s");
+                dd.html(d);
+                hh.html(h);
+                mm.html(m);
+                ss.html(s);
+                loadTime();
+            },1000);
+        }
+        loadTime();
+
+
+    })
+</script>
+</html>

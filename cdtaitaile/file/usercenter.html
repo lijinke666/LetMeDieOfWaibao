@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>个人中心</title>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!--头部-->
+<header class="flex">
+    <div class="l box-flex-1 text-left"><a onclick="back();" class="icon-left"></a></div>
+    <div class="c box-flex-1 text-center"><h1>个人中心</h1></div>
+    <div class="r box-flex-1 text-right"></div>
+</header>
+<!--可用积分-->
+<div class="section available-points flex">
+    <div class="box-flex-1 text-center">
+        <h2 class="none">可用积分</h2>
+        <p class=" none"><span class="icon-jifen3"></span><span>3000</span></p>
+    </div>
+</div>
+<div class="recharge-col flex vip vip-border flex-vc">
+    <div class="box-flex-1"><span class="icon-vip"></span>会员等级</div>
+    <div class="box-flex-1 text-right fz14rem color-blue">青铜会员</div>
+</div>
+<div class="recharge-col flex vip flex-vc">
+    <div class="box-flex-1"><span class="icon-king"></span>会员身份</div>
+    <div class="box-flex-1 text-right fz14rem color-blue">一级会员</div>
+</div>
+<!--&lt;!&ndash;已兑换&ndash;&gt;-->
+<!--<div class="section flex text-center buy">-->
+    <!--<div class="box-flex-1">-->
+        <!--<span class="icon-jifen"></span><span>已兑换</span>-->
+    <!--</div>-->
+    <!--<div class="box-flex-1">-->
+        <!--<span class="icon-jifen"></span><span>已兑换</span>-->
+    <!--</div>-->
+    <!--<div class="box-flex-1">-->
+        <!--<span class="icon-jifen"></span><span>已完成</span>-->
+    <!--</div>-->
+<!--</div>-->
+<!--操作-->
+<div class="section operation-list">
+    <ul class="none flex  text-center">
+            <li class="box-flex-1">
+                <a href="change-password.html">
+                    <div class="color-red">
+                        <span class="icon-safe"></span>
+                    </div>
+                    <span>密码修改</span>
+                </a>
+            </li>
+            <li class="box-flex-1">
+                <a href="shipping-address.html">
+                    <div class="color-green">
+                        <span class="icon-address"></span>
+                    </div>
+                    <span>收货地址</span>
+                </a>
+            </li>
+            <li class="box-flex-1 ">
+                <a href="#">
+                    <div class="color-blue">
+                        <span class="icon-jifen4"></span>
+                    </div>
+                    <span>充值积分</span>
+                </a>
+            </li>
+    </ul>
+    <ul class="none flex  text-center">
+            <li class="box-flex-1">
+                <a href="shop.html">
+                    <div class="color-green">
+                        <span class="icon-shop"></span>
+                    </div>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="box-flex-1">
+                <a href="#">
+                    <div class="color-orange">
+                        <span class="icon-award"></span>
+                    </div>
+                    <span>我的抽奖</span>
+                </a>
+            </li>
+            <li class="box-flex-1 ">
+                <a href="convert.html">
+                    <div class="color-light">
+                        <span class="icon-jifen"></span>
+                    </div>
+                    <span>兑换记录</span>
+                </a>
+            </li>
+    </ul>
+</div>
+<!--退出登录-->
+<div class="section back-login recharge-col">
+    <a href="#" class="btn btn-primary btn-block">退出登录</a>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+</html>

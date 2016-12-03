@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>抽奖界面</title>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body style="overflow-x:hidden;">
+<!--头部-->
+<header class="flex">
+    <div class="l box-flex-1 text-left"><a href="#"><span class="icon-left"></span></a></div>
+    <div class="c box-flex-1 text-center"><h1>抽奖</h1></div>
+    <div class="r box-flex-1 text-right"></div>
+</header>
+<!-- 代码 开始 -->
+<div class="game-header-margin">
+<img src="images/1.png" id="shan-img" style="display:none;" />
+<img src="images/2.png" id="sorry-img" style="display:none;" />
+    <div class="banner">
+        <div class="turnplate" style="background-image:url(images/turnplate-bg.png);background-size:100% 100%;">
+            <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+            <img class="pointer" src="images/turnplate-pointer.png"/>
+        </div>
+    </div>
+</div>
+<!-- 代码 结束 -->
+<!--奖品名称-->
+<div class="prize-name text-center fz18rem">
+    <p>你获得:<span class="color-main prize-name-show"></span></p>
+</div>
+<div class="recharge-col text-center"><a href="#" class="fz14rem color-main">查看我的奖品</a></div>
+<div class="flex recharge-col">
+    <!--剩余次数-->
+    <div class="box-flex-1 btn btn-default" style="margin-right:0.5rem">当前积分:<span class="color-main thisAllIntegral">3000</span></div>
+    <div class="box-flex-1 btn btn-default">剩余次数:<span class="color-main price-cishu">3</span>次</div>
+</div>
+<div class="color-grey recharge-col">
+    <p class="fz12rem">注:抽奖一次需要消耗 <span class="yici color-main">200</span>积分</p>
+    <p class="fz12rem">获得奖品可到个人中心-我的抽奖-查看</p>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/game.js"></script>
+<script src="js/awardRotate.js"></script>
+</html>

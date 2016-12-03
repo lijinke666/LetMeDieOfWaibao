@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/*=======================================================
+	统一标签样式
+=========================================================*/
+/* line 6, ../../sass/include/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* 统一老式浏览器HTML5显示 */
+/* line 21, ../../sass/include/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 23, ../../sass/include/reset.scss */
+body {
+  line-height: 1.2; }
+
+/* line 24, ../../sass/include/reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 25, ../../sass/include/reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 26, ../../sass/include/reset.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 27, ../../sass/include/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* H1 - H6 */
+/* line 31, ../../sass/include/reset.scss */
+h1 {
+  margin-top: 8px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-size: 35px; }
+
+/* line 32, ../../sass/include/reset.scss */
+h2 {
+  margin-top: 8px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-size: 30px; }
+
+/* line 33, ../../sass/include/reset.scss */
+h3 {
+  margin-top: 8px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-size: 25px; }
+
+/* line 34, ../../sass/include/reset.scss */
+h4 {
+  margin-top: 8px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-size: 20px; }
+
+/* line 35, ../../sass/include/reset.scss */
+h5 {
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-size: 15px; }
+
+/* line 36, ../../sass/include/reset.scss */
+h6 {
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-size: 11px; }
+
+/* sup上标, sub下标 */
+/* line 39, ../../sass/include/reset.scss */
+p sup {
+  position: relative;
+  font-size: 60%;
+  bottom: 7px; }
+
+/* line 40, ../../sass/include/reset.scss */
+p sub {
+  position: relative;
+  font-size: 60%;
+  top: 2px; }
+
+/* line 41, ../../sass/include/reset.scss */
+b, strong {
+  font-weight: bold; }
+
+/* line 42, ../../sass/include/reset.scss */
+i {
+  font-style: italic; }
+
+/* line 43, ../../sass/include/reset.scss */
+code, pre {
+  font-family: monospace; }
+
+/* line 44, ../../sass/include/reset.scss */
+q {
+  color: #919191; }
+
+/* line 45, ../../sass/include/reset.scss */
+q::before {
+  content: "\201C";
+  font-size: 28px;
+  line-height: 28px; }
+
+/* line 46, ../../sass/include/reset.scss */
+q::after {
+  content: "\201D";
+  font-size: 28px;
+  line-height: 28px; }
+
+/* 列表 */
+/* line 49, ../../sass/include/reset.scss */
+ul {
+  margin-left: 25px; }
+
+/* line 50, ../../sass/include/reset.scss */
+ul li {
+  list-style: disc; }
+
+/* line 51, ../../sass/include/reset.scss */
+ul li ul li {
+  list-style: circle;
+  margin-left: 5px; }
+
+/* line 52, ../../sass/include/reset.scss */
+ol {
+  margin-left: 25px; }
+
+/* line 53, ../../sass/include/reset.scss */
+ol li {
+  list-style-type: decimal; }
+
+/* line 54, ../../sass/include/reset.scss */
+ol li ol li {
+  list-style-type: lower-alpha;
+  margin-left: 5px; }
+
+/* line 55, ../../sass/include/reset.scss */
+dl dt {
+  font-weight: bold; }
+
+/* line 56, ../../sass/include/reset.scss */
+dl dd {
+  margin-left: 10px; }
+
+/* line 58, ../../sass/include/reset.scss */
+table {
+  border: 1px solid #ababab; }
+
+/* line 59, ../../sass/include/reset.scss */
+td {
+  padding: 5px;
+  border: 1px solid #ababab;
+  vertical-align: middle; }
+
+/* line 61, ../../sass/include/reset.scss */
+p {
+  margin: 15px 0; }
+
+/* line 62, ../../sass/include/reset.scss */
+hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  margin-top: 12px;
+  margin-bottom: 12px; }
+
+/*# sourceMappingURL=reset.css.map */

@@ -1,0 +1,1081 @@
+@charset "utf-8";
+/* Scss Document */
+
+// 引入compass的库 
+@import "compass/css3";
+@import "blueprint/colors";
+@import "compass/support";
+@import "compass/css3/box";
+
+//引入基础样式
+
+@import "include/config.scss";
+@import "include/base.scss";
+
+.wrapper{ background-color:#fff; width: $wrap_width; margin: 30px auto; border-top:1px solid #fff; position:relative;}
+.user-sidebar{width: 210px; min-height: 100%; background-color: #fff; color: #9196a4; position:absolute; top:0; left:0; bottom:0; border-right:1px solid #eee;
+    .user-panel{ height: 268px; overflow: hidden;
+        .headimg{ width: 114px; height: 114px; margin: 30px auto 0; @include border-radius(50%); overflow: hidden;}
+        .username{margin-top: 10px; text-align: center; font-size: 20px; color:#666;}
+        .userphone{ text-align: center; font-size: 16px;}
+    }
+	.auth-icon  { text-align:center;
+		span{ display:inline-block; margin-top:10px; width:30px; height:30px; background:url(../images/u_auth_icon.png) no-repeat; cursor:pointer;}
+		span.active { background-position-y:-30px;}
+		.i-mobile { background-position:0;}
+		.i-id-card { background-position-x:-30px;}
+		.i-back-card { background-position-x:-60px;}
+		.i-lock { background-position-x:-90px;}
+		.i-modify { background-position-x:-120px;}
+	}
+	
+    .usermenu{font-size: 14px;
+        a{ display: block; height: 38px; padding-left: 45px; line-height: 38px; @include a-color(#666,#666,#f36d38,#bdc3d0);
+            &.active,&:hover{ background-color: #e1f1ff; color: #f36d38;}
+            .icon{width: 20px; font-size: 16px; margin-right: 10px; }
+        }
+    }
+    h5{ margin: 30px 0 10px; padding-left: 45px; font-size: 14px;}
+}
+.user-wrap{ min-height: 100%; margin-left:212px; background-color:#fff;}
+.user-header{ height: 68px; margin-bottom: 20px; background-color: #FFF; border-bottom: 1px solid $border_color;
+    .logo{ width: 146px; height: 100%; float: left; background: url(../images/logo_usercenter.png) no-repeat center; border-right: 1px solid $border_color;}
+    .nav-usercenter{ float: left; margin-left: 22px; font-size: 14px;
+        li{float: left; 
+            a{ display: block; padding: 0 22px; line-height: 68px;}
+        }        
+    }
+    .loginout{width: 156px; height: 100%; float: right; border-left: 1px solid $border_color; line-height: 68px; font-size: 14px; text-align: center; color: #9f9f9f;
+        .icon{ font-size: 18px;  margin-right: 5px;}
+        &:hover{ background-color: $ornament_color; color: #FFF;}
+    }
+    .fastinfo{ float: right; padding-right: 20px;
+        li{float: left; line-height: 68px; font-size: 24px;
+            a{ line-height: 68px; display: block; padding: 0 20px; color: #bababa; position: relative;
+                &:hover{ color: $main_color;}
+            }
+            .number{ height: 18px; margin-left: 8px; padding: 0 5px; background-color: $main_color; border: 1px solid #FFF; @include border-radius(9px); line-height: 18px; font-size: 12px; color: #FFF; position: absolute; left: 50%; top: 12px;}
+        }
+    }
+}
+.user-content{
+    margin: 0 40px;
+    padding-top: 40px;
+    min-height: 755px;
+}
+.user-title{
+    padding: 30px 0 15px 40px;
+    font-size: 16px;
+    border-bottom: 1px solid $border_color;
+
+    .icon{
+        color: #666;
+        font-size: 18px;
+        vertical-align: text-bottom;
+    }
+}
+.row{ margin-bottom: 16px; @include clearfix; position: relative;
+    &>.row{ margin-bottom: 0;}
+}
+.usegold{height: 132px;  background: #ed994e url(../images/bg_ky.png) no-repeat right bottom; color: #FFF;
+    h2{font-size: 36px; margin: 0; padding: 25px 0 0 30px; font-weight: normal; @include text-shadow(2px 3px 3px #d47d31);}
+    p{padding-left: 30px; font-size: 16px;}
+}
+.survey{ margin-left: 15px; height: 132px; background: #69cab9 url(../images/bg_tj.png) no-repeat right bottom;
+    ul{ padding-top: 21px;}
+    li{ height: 90px; float: left; text-align: center; font-size: 14px;
+        &:last-child a{ border-right: none;}
+        a{ display: block; border-right: 1px solid #5abaa9;}
+        .number{display: block; margin-top:10px; font-size: 28px; @include text-shadow(1px 2px 2px rgba(0,0,0,.1));  color: #FFF;}
+        .txt{display: block; margin-top:10px;  color: #FFF;}
+    }
+}
+
+.well{ background: #FFF; @include clearfix;}
+.capital-total{
+    .type{
+        a{ height: 22px; display: inline-block; margin-left: 15px; padding: 0 15px; background-color: #fdfdfd; border:1px solid #d9d9dd; @include border-radius(12px); line-height: 22px; color: #acacb6;
+            &.active{ background-color: #f37947; border-color: #f37947; color: #FFF;}
+        }
+    }
+}
+.capital-body{ height: 200px; padding: 10px 0;
+   
+    .zetj{width: 180px; float: left; margin-right: 15px; padding-right:15px; border-right: 1px solid #f6f6f6; font-size: 14px;
+        &.autotb{
+            li{height: 38px; line-height: 38px;}
+        }
+        li{height: 44px; border-bottom: 1px dashed $border_color; line-height: 44px;}
+    }
+    .color{width: 10px; height: 10px; display: inline-block; margin-right: 10px; @include border-radius(2px);}
+    .color-01{ background-color: #71cd7c;}
+    .color-02{ background-color: #8e809b;}
+    .color-03{ background-color: #f96f6f;}
+    .color-04{ background-color: #47b5f4;}
+    .color-05{ background-color: #b767bc;}
+    .total{width: 120px; float: left; margin: 60px 15px 0 0; font-size: 14px;
+        h2{ color: #ea6b4e; font-size: 24px; font-weight: normal;}
+    }
+    .tongji{float: left; margin: 20px 15px 0 0; text-align: center;}
+    .tjze{float: left; width: 90px;  font-size: 14px;  line-height: 40px;}
+    .mypm{width: 265px; height: 100px; float: left; margin-top: 50px; padding-left: 20px; background-color: #fef7eb; border-left: 4px solid #f37947; font-size: 16px; color: #c6846a; overflow: hidden;
+        .tit{ margin-top: 15px;}
+        h2{ margin-top: 10px; font-size: 32px; color: #ef5959; font-weight: normal; line-height: 1;}
+        
+    }
+}
+.balace{
+    .zetj{width: 260px;}
+    .total{width: 160px;}
+    .tongji{ margin-top: 10px;}
+    .tjze{width: 150px; float: right;}
+}
+.dynamic{ margin-left: 15px;}
+.dynamic-body{ height: 200px; padding: 10px 0;
+    .newest{height: 44px; padding: 0 10px; background-color: #fef7eb; border-left: 4px solid $main_color; line-height: 44px; font-size: 14px; @include ellipsis;}
+    .newest-tit{color: #746661; font-size: 14px; margin-top: 15px;}
+    .newst-list{ margin-top: 10px;
+        li{ line-height: 30px; font-size: 14px; list-style-image: url(../images/icon_circular02.png); list-style-position: inside;}
+    }
+}
+.usertitle{ padding: 10px 0; @include clearfix;
+    p{display: inline-block; float: left; font-size: 16px; color: #514542; vertical-align: middle; font-weight: normal}
+    .usersearch{height: 24px;  vertical-align: middle; margin-left: 10px; padding: 0 10px; display: inline-block; float: left; background: #FFF; border: 1px solid #DDD; @include border-radius(12px); color: #c7bdb9;
+        input{height: 24px; background: none; border: none; padding: 0;}
+    }
+    .lstype{float: right; line-height: 26px;
+        a{ margin: 0 10px; display: inline-block;
+            &.active{ border-bottom: 2px solid $main_color; color: $main_color;}
+        }
+    }
+}
+.liushui{height: 390px; overflow-y: auto;
+    .item{
+        table{width: 100%; border: none;}
+        td{height: 34px; border-color: #EEE; text-align: center; padding:0 6px;}
+        thead td{height: 40px; font-weight: bold; background-color: #fcfcfc;}
+        .lookdetailed{height: 20px; display: inline-block; padding: 0 10px; background-color: #f9fafa; border:1px solid #c5cdd5; @include border-radius(10px); line-height: 20px;
+            &:hover{ background-color: $main_color; border-color: $main_color; color: #FFF;}
+        }
+    }
+}
+.golddynamic{ height: 424px;}
+.golddynamic-body{height: 340px; margin: 0 20px; padding: 10px 0; overflow: hidden;
+    li{ height: 58px; margin-bottom: 10px; padding: 0 10px; background-color: #fef7eb; border-left: 3px solid #fad1ba;
+        .icon{width: 44px; height: 44px; float: left; margin: 7px 20px 0 0; background-color: #f49971; @include border-radius(50%); color: #FFF; line-height: 44px; text-align: center; font-size: 28px;}
+        .tit{ display: block; padding-top: 8px; font-size: 16px; color: #48211b; @include ellipsis;}
+        .time{ display: block; font-size: 14px; color: #a77e77;}
+    }
+}
+.share{ height: 112px; margin-left: 15px; padding: 10px 20px; border: 1px solid $border_color; overflow: hidden;
+    table,td{ border: none;}
+    table{width: 90%; margin-top: 30px;}
+    .tjcode{width: 125px; height: 100%; float: left; border-right: 1px solid #EEE;
+         h2{font-size: 24px; color: $ornament_color;}
+    }
+    .tjtit{font-size: 18px; line-height: 50px;}
+    .tjlink{width: 400px; float: left; margin-left: 20px;}
+    
+    .linktxt{width: 265px; height: 34px; float: left;  margin-right: 10px; padding: 0 10px; background-color: #fafafa; border: 1px solid #d9d9d9; line-height: 34px; font-size: 14px; }
+    .btn-copy{width: 100px; height: 36px; float: left; background-color: #ef5555; border: none; font-size: 14px; color: #FFF;}
+}
+.tuijianren{min-height: 715px;
+    .tuijianren-body{margin-top: -1px; }
+    table{width: 100%;  border: none;}
+    td{height: 34px; border-color: #EEE; text-align: center; padding:0 6px;}
+    thead td{height: 40px; font-weight: bold; background-color: #fcfcfc;}
+    .well-header{padding:0 0 18px 0;}
+}
+.quan{min-height: 715px; margin-left: 15px;
+    .shengyu{ float: right; font-size: 14px; color: #514542;}
+    .quan-body{ margin: 0 10px; padding: 10px 0;
+        li{width:233px; height: 135px; float: left; margin: 10px 7px;  background: url(../images/quan.png) no-repeat center; color: #FFF;
+            .quan-info{width: 185px; float: left; padding-left: 16px;}
+            .name{ margin-top: 16px;}
+            h2{ margin-right: 10px; font-size: 30px; display: inline-block;}
+            .jx{ font-size: 14px; margin-top: 5px; padding-bottom: 5px; border-bottom: 1px dashed #b06170;}
+            .qixian{ margin-top: 5px; font-size: 12px;}
+            .zhuangtai{width: 20px; margin: 32px 6px 0 0; float: right; font-weight: bold; font-size: 14px; text-align: center; color: #a75e00; line-height: 24px;}
+        }
+    }
+}
+.jrsy{height: 152px; margin-top: 10px; padding-left: 30px; background-color: #fef7eb; border-left: 4px solid #f37947; overflow: hidden;
+    h2{ margin-top: 30px; font-size: 36px; color: #ef5959; font-weight: normal;}
+    p{font-size: 16px; color: #c6846a;}
+}
+.safelv{ height: 132px; overflow: hidden;}
+.safe-bg{ margin: 15px 0; height: 24px; background-color: #DDD; @include border-radius(12px); overflow: hidden;
+    &>div{height: 100%; background: repeat-x center; @include border-radius(12px);}
+    .safe-low{ background-image: url(../images/bg_safe_low.jpg);}
+    .safe-middle{background-image: url(../images/bg_safe_middle.jpg) ;}
+    .safe-high{background-image: url(../images/bg_safe_high.jpg);}
+}
+
+.safe-body{ padding: 0 0 20px; @include clearfix;
+    .item{width: 264px; height: 380px; margin: 20px 10px 0; float: left; background: #FFF; border: 1px solid $border_color; text-align: center; 
+        .img{padding: 16px 0;}
+        h2{height: 40px; font-size: 16px; line-height: 20px; overflow: hidden;}
+        .notice{height: 40px; margin:0 10px; font-size: 12px; line-height: 20px; color: #838383; overflow: hidden;}
+        .state{width: 64px; height: 20px; margin: 15px auto 0; line-height: 20px; text-align: center; @include border-radius(10px); color: #FFF;
+            &.yes{background-color: #63cc92;}
+            &.no{background-color: #e54f49;}
+        }
+        .date{margin:15px 10px 0; font-size: 12px;  color: #838383;}
+        .ctrl{ margin-top: 20px; padding-top: 10px; border-top: 1px dashed $border_color; font-size: 14px; color: #838383;
+            a{ text-decoration: underline; color: #e54f49;}
+        }
+    }
+}
+.modal{
+    .modify-wrap{ height: 390px;}    
+}
+
+#pwd_modal{     
+    .modalform{width: 240px; margin: 50px auto 0;}
+}
+
+#card_modal{    
+    .modalcont{ width: auto; margin: 10px 15px 0;
+        .modalform{ width: auto;}
+        .name{margin-top: 30px; font-size: 22px; font-weight: bold; color: $main_color;}
+        fieldset{width: 238px; padding-right: 10px; float: left;}
+        
+    }
+}
+
+.recharge_modal{
+    .modalcont{ width: auto; margin: 10px 15px 0;
+        .modalform{ width: auto;}
+    }
+    .pay-title{ margin-top: 50px; font-size: 14px;}
+    .money{width: 316px;}
+    .paytype{@include clearfix;
+        .item{width: 152px; height: 46px; float: left; margin: 10px 10px 0 0; border: 1px solid #d9d9d9; cursor: pointer; position: relative;
+            img{ width: 100%; height: 100%;}
+            &.active{width: 150px; height: 44px; border: 2px solid #f86041;
+                &:before{content: ""; width: 36px; height: 34px; background: url(../images/checked.png) no-repeat center; position: absolute; top: 0; right: 0;}
+            }
+        }
+    }
+}
+
+.withdraw_modal{
+    .modalcont{ width: auto; margin: 30px 15px 0;
+        .modalform{ width: auto;}
+    }
+    .txm{ width: 50%; margin-right: 10px;}
+    .imgyz{width: 130px;}
+}
+.card_sure{width: 400px; height: 290px; margin: -200px 0 0 -195px; background-color: #FFF; position: absolute; left: 50%; top: 50%; z-index: 100;
+    h1{ height: 98px; text-align: center; background-color: #fafafa; border-bottom: 1px solid $border_color; font-size: 26px; color: $ornament_color; line-height: 98px;}
+    .notice{font-size: 14px;  margin-top: 20px;
+        li{ padding:0 30px; line-height: 30px;
+         &:before{ width: 6px;  height: 6px;  margin-right: 10px;  display: inline-block;  vertical-align: middle;  content: ""; background-color: #ec998e; @include border-radius(50%);}
+            
+        }
+    }
+}
+.userinfo{ padding: 30px 0; font-size: 14px;
+    table{ margin: 0 auto; border: none;}
+    td{ padding:12px 7px; border: none;}
+    label{ position: relative; display: inline-block;}
+    input.inp{width: 290px; height: 40px; padding: 0 8px; line-height: 40px;}
+    select.inp{width: 310px; height: 40px; padding: 0 8px; line-height: 40px; @include border-radius(0);}
+    textarea.inp{width: 290px; height: auto; padding: 0 8px;}
+    .btn-submit{ width: 310px; height: 42px;}
+     .Validform_checktip{ position: absolute; left: 0; bottom: -20px; color: #F00; font-size: 12px; line-height: 20px;} 
+}
+.sexselect{
+    input{display: none;}
+    input:first-child+label{border-radius:12px 0 0 12px;}
+    input+label:last-child{border-radius:0 12px 12px 0;}
+    label{float: left; height: 24px; margin-right: -1px; padding: 0 10px; border: 1px solid #ea6b4e; color: #ea6b4e; line-height: 24px;}
+    input:checked+label{ background-color: #ea6b4e; color: #FFF;}
+   
+}
+
+.message-list{
+    .message-item{ margin-left: 80px; padding: 10px 0; border-left: 4px solid #f48863;  position: relative;
+        .date{width: 60px; padding-right: 10px; position: absolute; left: -80px; top: 20px; text-align: right;
+            &:before{content: ""; width: 14px; height: 14px; background-color:#f48863 ; @include border-radius(50%); border: 2px solid $bg_color; position: absolute; top: 4px; right: -17px;}
+            .day{font-size: 18px; color: #f48863;}
+            .year{font-size: 14px; color: #999;}
+        }
+        .message-wrap{
+            .message-cont{background: #FFF; border: 1px solid $border_color; margin-left: 50px; padding: 20px; position: relative;
+                &:before{ content: "";  border-right: 10px solid #FFF; border-top:10px solid transparent; border-bottom: 10px solid transparent; position: absolute; left: -10px; top: 30px; z-index: 2;}
+              &:after{ content: "";  border-right: 10px solid $border_color; border-top:11px solid transparent; border-bottom: 11px solid transparent; position: absolute; left: -11px; top: 29px; z-index: 1;}
+            }
+            .message-header{ padding-bottom: 10px; border-bottom: 1px solid $border_color;
+                h2{font-size: 16px; display: inline-block; color: #f48863;}
+            }
+            .message-body{ font-size: 14px;  margin-top: 10px; @include clearfix; line-height: 1.8;}
+        }
+    }
+}
+.speed{ height: 132px;
+    .speed-body{height: 62px; position: relative; padding: 70px 0 0;}
+    .fbyg{font-weight: bold;  color: #71cd7c; text-align: center; position: absolute; top: 54px;
+        span{width: 110px;  border-bottom: 1px solid #71cd7c;  position: absolute; top: -18px; left: -55px;}
+        &:before{content: ""; width: 1px; height: 18px; background-color: #71cd7c; font-size: 0; position: absolute; left: 0; bottom: -18px;}
+        &:after{content: ""; width: 7px; height: 7px; margin-left: -3px; background-color: #71cd7c; @include border-radius(50%); font-size: 0; position: absolute; left: 0; bottom: -18px;}
+    }
+    .pdzj{font-weight: bold;  color: #e65151; text-align: center; position: absolute; top: 26px;
+        span{width: 150px;  border-bottom: 1px solid #e65151;  position: absolute; top: -18px; left: -75px;}
+        &:before{content: ""; width: 1px; height: 46px; background-color: #e65151; font-size: 0; position: absolute; left: 0; bottom: -46px;}
+        &:after{content: ""; width: 7px; height: 7px; margin-left: -3px; background-color: #e65151; @include border-radius(50%); font-size: 0; position: absolute; left: 0; bottom: -46px;}
+    }
+    .mynum{ position: absolute; bottom: 0; color: $ornament_color; font-size: 12px; font-weight: bold;
+        span{width: 120px; text-align: center; position: absolute; left: -60px; bottom: 10px; z-index: 2;}
+    }
+    .speed-bar{ height: 24px;  background-color: #efe0d8; @include border-radius(12px); overflow: hidden; position: relative;
+        .bar{width: 50%; height: 100%; background: url(../images/bg_zj.jpg) repeat-x center;}
+        .wdpm{height: 12px; padding-left: 5px;  border-left: 1px solid #FFF; border-bottom: 1px solid #FFF; color: #FFF; line-height: 12px; position: absolute; top:6px;
+            &:before{width: 7px; height: 7px; content: ""; background-color: #FFF; @include border-radius(50%); position: absolute; left: -4px; top: 0;}
+        }
+    }
+    .kedu{margin-top: 3px; @include clearfix;
+        ul{}
+        li{width: 9.09%; float: left; position:relative;
+            span{width: 50px; text-align: center; display: inline-block; position: absolute; right: -25px; top: 10px;}
+            &:before{content: ""; width: 2px; height: 6px; float: right;  font-size: 0; line-height: 0; display: block; background-color: #fc853d;}
+        }
+    }
+}
+.stab{
+        a{ height: 24px; float: left; padding: 0 15px; text-align: center; color: #ea6b4e;  border: 1px solid #ea6b4e; line-height: 24px;
+            &:first-child{ @include border-radius(12px 0 0 12px);}
+            &:last-child{@include border-radius(0 12px 12px 0);}
+            &.active{ background-color: #ea6b4e; color: #FFF;}
+        }
+    }
+    
+.dqpm{  padding:15px 20px; background-color: #fef7eb; border-left: 4px solid #f37947; overflow: hidden;
+    h2{ font-size: 36px; color: #ef5959; font-weight: normal;}
+    h3{ font-size: 26px; color: #7d6363; font-weight: normal;}
+    .wd{font-size: 16px; color: #c6846a;}
+    *{@include ellipsis;}
+    
+}
+.well-body{ padding: 10px 20px; @include clearfix;}
+.zdtz{ padding: 20px 0; @include clearfix;}
+.tbgz{margin-top: 10px; color: #754e3f; font-size: 14px; line-height: 30px;  white-space: normal;}
+
+.tzsz{ margin-right: 20px; 
+    .item{width: 50%; float: left; padding-bottom: 10px;  border-bottom: 1px dashed #CCC; 
+        h2{ font-size: 28px; font-weight: normal; line-height: 1;}
+        p{font-size: 16px; margin: 10px 0 0; color: #666;}
+    }
+}
+
+.tzset{margin-right: 20px; border-bottom: 1px dashed #CCC;
+    .item{ padding:14px 10px; font-size: 14px;
+        h3{font-size: 14px; display: inline-block; margin:0 5px 0 0; color: #514542;
+            &:before{width: 6px; height: 6px; margin-right: 10px; display: inline-block; vertical-align: middle; content: ""; background-color: #ff6526; @include border-radius(50%);}
+        }
+        .lilv{ font-size: 14px; color: #514542;}
+    }
+}
+.settab{ display: inline-block; vertical-align: middle;
+    a{display: inline-block; width: 70px; height: 24px; float: left; margin-right: -1px;  border:1px solid #75c890;  line-height: 24px; text-align: center; color: #75c890;
+        &.active{ background-color: #75c890; border-color: #75c890; color: #FFF;}
+        &:first-child{@include border-radius(12px 0 0 12px);}
+        &:last-child{@include border-radius(0 12px 12px 0);}
+    }
+}
+.blpm{ margin-left: 40px; font-size: 14px; 
+    a{ color: #ef5555; text-decoration: underline;}
+}
+.slider-container.theme-green {display: inline-block;
+    .back-bar{height: 10px; background: #ffb89b; border-radius: 5px;
+        .pointer{width: 20px; height: 20px; background: #f87a74; border:3px solid #FFF;
+            &:before{ content: ""; font-size: 0; line-height: 0; border-bottom: 5px solid #f87a74; border-left: 5px solid transparent; border-right: 5px solid transparent; position: absolute; left: 2px; top:17px;}
+        }
+        .selected-bar{ background: #f87a74;  border-radius: 5px;}
+        .pointer-label{width:60px ; height: 24px; display: block; margin-left: -25px; top: 21px;  background:#f87a74 ; border-radius: 12px; color: #FFF; line-height: 24px; font-size: 12px; text-align: center;
+//          &.low{ margin-left: -30px;}
+//          &.high{ margin-left: 30px;}
+        }
+    }
+    .scale{display: none;}
+    
+}
+.infobox{ height: 132px; margin-left: 15px; background: #000;
+    .tit{font-size: 16px; color: #FFF; padding: 15px 0 0 15px;
+        &:before{content: ""; width: 6px; height: 6px; display: inline-block; vertical-align: middle; margin-right: 8px; background: #FFF; @include border-radius(50%); opacity: 0.5;}
+    }
+    h2{margin-top: 15px; text-align: center; font-size: 32px; color: #FFF; font-weight: normal; @include text-shadow(2px 3px 3px rgba(0,0,0,.1));}
+}
+.yue{ background: #5ccc91 url(../images/bg_yue.png) no-repeat right bottom;}
+.lixi{ background: #b56dde url(../images/bg_lixi.png) no-repeat right bottom;}
+.benjin{ background: #5f9bd1 url(../images/bg_benjin.png) no-repeat right bottom;}
+
+.sytj{
+    .item{width: 50%; float: left; padding: 20px 0 20px 20px; box-sizing: border-box;
+        .number{ font-size: 20px; font-weight: bold;}
+        .txt{ margin-top: 5px;}
+    }
+}
+.linechart{ margin-top: 10px;height: 285px;}
+.paim{ @include clearfix; margin-top: 15px;
+    .nowpaiming{  float: left;  box-sizing: border-box;}
+    .number{ color: #f56455; font-size: 28px; font-weight: normal;}
+    .txt{ color: #757575; font-size: 14px;}
+    .beforeme{ float: left; padding-left: 20px; box-sizing: border-box;}
+}
+.yjfb{height: 62px; margin-top: 10px; padding: 10px 15px; background-color: #fdf1dd; color: #9a4638; line-height: 1;
+    .number{ margin-top: 2px; font-size: 28px;}
+    .txt{margin-top: 10px; font-size: 14px;}
+}
+.null{font-size: 16px; color: #d4d4d4; }
+
+//李洋新增部分
+//会员中心
+$top: 20px;
+$right: 30px;
+.user-info-box{
+    background: lighten($main_blue,25%);
+    border: 1px solid lighten($main_blue,15%);
+    padding: $top $right;
+    margin-bottom: 40px;
+    position: relative;
+
+    .welcome{
+        font-size: 18px;
+        span{
+            color: $ornament_color;
+        }
+    }
+
+    .line{
+        color: $border_color;
+    }
+
+    .ranking{
+        color: $main_color;
+    }
+
+    .level{
+        color: #14b867;
+    }
+
+    .personal{
+        margin-top: 5px;
+        color: #9d9d9d;
+
+        &>div{
+            width: 100px;
+            height: 5px;
+            background: #BFBFBF;
+            display: inline-block;
+            margin: 0 5px;
+            border-radius: 5px;
+            vertical-align: middle;
+
+            div{
+                width: 80px;
+                height: 5px;
+                background: #14b867;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .information{
+        position: absolute;
+        right: $right;
+        top: 0;
+        color: #6c6c6c;
+
+        p{
+            float: left;
+            text-align: center;
+        }
+
+        span{
+            color: #70beff;
+            font-size: 24px;
+        }
+    }
+
+    .myGold{
+        margin-right: $right;
+    }
+
+    .referralCode{
+        border-left: 1px solid $border_color;
+        padding-left: $right;
+    }
+}
+
+.account-box{
+    border: 1px solid $border_color;
+    margin-bottom: 30px;
+
+    &>div{
+        padding: $top $right;
+    }
+
+    .account-info{
+        height: 200px - $top * 2;
+        border-bottom: 1px solid $border_color;
+
+        &>div{
+            height: 100%;
+            float: left;
+        }
+
+        .title{
+             color: #9d9d9d;
+             margin: 0 50px 0 0;
+             float: left;
+             font-size: 14px;
+             //text-align: center;
+             span{
+                 color: $font_color;
+                 font-size: 18px;
+             }
+         }
+    }
+
+    .userBalance{
+        margin: 0;
+        font-size: 20px;
+
+        &>span{
+            font-size: 48px;
+            color: $main_color;
+        }
+    }
+
+    .balanceBox{
+        border-right: 1px solid $border_color;
+        width: 422px;
+        position: relative;
+
+        &>div{
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 30px;
+            text-align: center;
+            font-size: 18px;
+
+            div{
+                height: 30px;
+                line-height: 30px;
+                cursor: pointer;
+            }
+
+            .recharge{
+                margin-top: 45px;
+            }
+
+            .withdraw{
+                border: 1px solid $border_color;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .profitBox{
+        padding-left: 40px;
+        width: 383px;
+    }
+
+    .assets-info{
+        padding-left: $right * 2;
+        height: 100px - $top * 2;
+
+        p{
+            float: left;
+            margin: 0;
+            font-size: 16px;
+            color: #6c6c6c;
+            //text-align: center;
+            line-height: (100px - $top * 2) / 2;
+            width: 165px;
+
+            span{
+                font-size: 24px;
+                color: $font-color;
+            }
+        }
+
+        .profitBox{
+            padding-left: 40px;
+            width: 383px;
+        }
+
+        .symbol{
+            font-size: 24px;
+            width: 50px;
+            text-align: center;
+            height: 100%;
+            line-height: 100px - $top * 2;
+        }
+
+        .total-assets{
+            width: 171px;
+        }
+    }
+}
+
+.income-box{
+    padding: 0 $right 50px $right;
+    p{
+        font-size: 18px;
+        margin: 0;
+    }
+}
+
+.user-balance{
+    background: $bg_color;
+    padding: $top * 2 $right * 2;
+    height: 70px;
+    .symbol{
+        width: 55px;
+        line-height: 80px;
+        text-align: center;
+        color: #6c6c6c;
+    }
+    p{
+        margin: 0;
+        font-size: 14px;
+        color: #515151;
+        float: left;
+        span{
+            vertical-align: middle;
+        }
+        & > span{
+            font-size: 38px;
+        }
+        & > a{
+            display: inline-block;
+            text-align: center;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.user-investment{
+    background: $bg_color;
+    padding: $top $right;
+    height: 75px;
+    font-size: 14px;
+    margin-bottom: 40px;
+    p{
+        margin: 0;
+    }
+    .today-account{
+        float: right;
+        //display: inline-block;
+        width: 280px - $right;
+        padding-left: $right;
+        border-left: 1px solid $border_color;
+
+        span{
+            font-size: 36px;
+        }
+    }
+    .wait-income{
+        float: left;
+        p{
+            float: left;
+        }
+        .wait-total{
+            width: 167px;
+            span{
+                color: $main_color;
+                font-size: 36px;
+            }
+        }
+        .wait-info{
+            color: $grey_color;
+            width: 150px;
+            line-height: 32px;
+            span{
+                padding-top: 10px;
+                font-size: 28px;
+            }
+
+        }
+        .symbol{
+            color: $grey_color;
+            font-size: 24px;
+            width: 50px;
+            text-align: center;
+            line-height: 80px;
+        }
+    }
+}
+
+.user-record{
+    margin-bottom: 15px;
+    &>a{
+        font-size: 14px;
+        margin-right: 30px;
+    }
+}
+
+/*======================================*/
+// 李金珂  部分   新版我的金币页面
+
+.gold-info-box{
+    width: 900px;
+    height: 135px;
+    .gold-info{
+        width: 500px;
+        height:135px;
+        float: left;
+        background: $bg_color;
+        >div{
+            float: left;
+        }
+        .gold-has{
+            width: 170px;
+            height: 75px;
+            border-right: 1px solid $border_color;
+            margin-left: 45px;
+            margin-top:27px;
+            >h5{
+                font-size: 14px;
+                color:$grey_color;
+                font-weight: normal;
+            }
+            >p{
+                font-size: 35px;
+                color:#515151;
+            }
+        }
+        .gold-get{
+            margin-top:45px;
+            color: $grey_color;
+            >h5{
+                font-size: 14px;
+                font-weight: normal;
+            }
+            >p{
+                font-size: 18px;
+            }
+        }
+        .get1{
+            margin-left: 20px;
+        }
+        .get2{
+            margin-left: 75px;
+        }
+    }
+    .conversion-gold,.gold-shop{
+        width: 185px;
+        height: 135px;
+        float: left;
+        margin-left: 12px;
+        text-align: center;
+
+    }
+    .conversion-gold{
+        background: url("../images/bg_ticket.png");
+        >p{
+            font-size: 18px;
+            color:$main_color;
+        }
+        >button{
+            width: 115px;
+            margin-top:22px;
+            @include btn($main_color,none,white);
+        }
+
+    }
+    .gold-shop{
+        background: url("../images/coming_soon.png");
+        >p{
+            font-size: 18px;
+            color:$main_blue;
+        }
+    }
+
+}
+.how-gold{
+    margin-top:40px;
+    h3{
+        font-size: 16px;
+        color:$font_color;
+        font-weight: normal;
+    }
+}
+.how-gold-box-ul{
+    margin: 0px 0px 50px 0px;
+}
+.how-gold-box{
+    display: inline-block;
+    width: 275px;
+    height: 268px;
+    border:1px solid $border_color;
+    text-align: center;
+    >div{
+        font-size: 50px;
+        margin-top:20px;
+        color:$grey_color;
+    }
+    >h5{
+        font-size: 16px;
+        font-weight: normal;
+        margin-top:40px;
+    }
+    >p{
+        font-size: 14px;
+        color:$grey_color;
+        margin: 0;
+    }
+    >button{
+        width: 115px;
+        margin-top:20px;
+    }
+    .btn1{
+        @include btn(lighten($warning_color,10%),none,white);
+    }
+    .btn2{
+        @include btn(lighten($progress_bar_color,10%),none,white);
+    }
+    .btn3{
+        @include btn(lighten($info_color,10%),none,white);
+    }
+
+
+}
+.how-gold-box-mar{
+    margin-left: 15px;
+}
+
+.record-list{
+    float: right;
+    >ul{
+        >li{
+            display: inline-block;
+            list-style-type: none;
+            font-size: 13px;
+            margin-right:7px;
+        }
+        .line-color{
+            color:$border_color;
+        }
+        .list-active{
+            color:$main_color;
+            border-bottom: 2px solid $main_color;
+            padding-bottom: 4px;
+        }
+    }
+}
+
+.record{
+    >span{
+        font-size: 16px;
+    }
+    .record-input-box{
+        margin-left: 7px;
+        display: inline-block;
+        border: 1px solid $border_color;
+        padding: 0px 0px 0px 7px;
+        @extend %radius-15px;
+        >span{
+            font-size: 12px;
+            color:$input_value_color;
+        }
+        .record-input{
+            border:none;
+            height: 22px;
+            color:$grey_color;
+            font-size: 12px;
+        }
+    }
+}
+.record-list-input{
+    border:none;
+    height: 22px;
+    color:$grey_color;
+    line-height: 20px;
+    font-family: 'Microsoft YaHei';
+}
+.record-list-input{
+    border:none;
+    height: 22px;
+    color:$grey_color;
+    line-height: 20px;
+}
+
+/*我的特权金*/
+.privilege-of-gold{
+    height: 130px;
+    background: $bg_color;
+    border:1px solid $border_color;
+    .privilege-of-gold-box{
+        margin-left: 30px;
+        margin-top:25px;
+        border-right: 1px solid $border_color;
+        >h5{
+            font-size: 14px;
+            font-weight: normal;
+        }
+        >p{
+            font-size: 36px;
+            margin-left: -4px;
+            >.privilege-of-gold-btn{
+                height: 30px;
+                margin-left: 15px;
+                line-height: 12px;
+                @include btn($main_color,none,white);
+            }
+        }
+        .privilege-of-gold-box-color1{
+            color:$main_color;
+        }
+        .privilege-of-gold-box-color2{
+            color:$font_color;
+        }
+    }
+    .recommend-friend{
+        display: block;
+        margin: 45px auto;
+        width: 190px;
+        height: 40px;
+        font-size: 16px;
+        @include btn($main_blue,none,white);
+        >span{
+            margin-right:5px;
+        }
+    }
+}
+
+.gold-introduce{
+    margin-top:40px;
+    border-bottom: 1px solid $border_color;
+    padding-bottom: 7px;
+    >h3{
+        color:$main_color;
+        font-weight: normal;
+        font-size: 16px;
+    }
+}
+
+.gold-introduce-box{
+    margin-bottom: 50px;
+    ul{
+        display: inline-block;
+    }
+    li{
+        float: left;
+        width: 170px;
+        height: auto\9;
+        text-align: center;
+        list-style-type: none;
+        >div{
+            font-size: 85px;
+            color:$grey_color;
+        }
+        >h5{
+            color:$font_color;
+        }
+        >p{
+            color:$grey_color;
+            font-size: 14px;
+            margin-top:25px;
+        }
+    }
+    .blank-spaces{
+        width: 140px;
+        height: 200px;
+    }
+}
+.gold-record{
+    >a{
+        font-size: 16px;
+        margin-right:30px;
+    }
+    .record-active{
+        padding-bottom: 5px;
+        color:$main_color;
+        border-bottom: 2px solid $main_color;
+    }
+}
+
+
+/*我的加息券页面*/
+.conversion-header{
+    height: 29px;
+    border-bottom:1px solid $border_color;
+    padding-bottom: 10px;
+    .conversion-button{
+        width: 160px;
+        background: $main_blue;
+        display: block;
+        color:white;
+        float: right;
+        >span{
+            margin-right: 10px;
+        }
+    }
+    >a{
+        display: inline-block;
+        width: 100px;
+        font-size: 16px;
+        text-align: center;
+        margin-right:10px;
+        padding-top: 8px;
+    }
+}
+
+.raise-interest-box{
+    margin-top:40px;
+    min-height: 250px;
+    .raise-interest-li{
+        width: 170px;
+        height: 90px;
+        display: inline-block;
+        margin:0px 30px 10px 0px;
+        padding: 10px 15px 0px 50px;
+        background: url("../images/bg_raise.png");
+        >span{
+            color:$grey_color;
+            font-size: 16px;
+        }
+        .raise-interest-number{
+            float: right;
+        }
+        .raise-data{
+            color:$grey_color;
+            font-size: 20px;
+        }
+    }
+}
+
+.service-regulations{
+    height: 29px;
+    border-bottom: 1px solid $border_color;
+    >h3{
+        display: inline-block;
+        width: 100px;
+        font-size: 16px;
+        text-align: center;
+        padding-bottom: 2px;
+    }
+}
+.warm-prompt{
+    padding-bottom: 100px;
+    >p{
+        font-size: 13px;
+    }
+    li{
+        color:$grey_color;
+        line-height: 25px;
+        font-size: 14px;
+    }
+    .warm-prompt-question{
+        color:$main_blue;
+    }
+}
+

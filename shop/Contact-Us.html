@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if IE]>
+    <script src="js/html5.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部-->
+<div class="top">
+    <div class="pull-left">Free Shipping Worldwide on all orders</div>
+    <div class="pull-right"><a href="#" class="margin-right">Sign In</a><a href="#" class="margin-right">Help</a><a href="#">Cart ( 0 )</a></div>
+</div>
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <ul class="clearListStyle">
+                <li><a href="">SHOP</a></li>
+                <li><a href="">OUR STORY</a></li>
+                <li><a href=""><img src="images/logo.png" alt="商城logo"/></a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="" class="active">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!--联系我们-->
+<div class="contact-us">
+    <h2 class="none normal fz24">Contact Us</h2>
+    <p class="fz13">Have a question? Great. We are here to help you 7 days a week and respond within 24 hours.</p>
+
+    <form action="http://www.baidu.com" method="#" name="contact-us">
+        <p class="none fz13 mt20">Your Name:</p>
+        <input type="text" class="inp " minlength="1" required="true"/>
+        <p class="none mt20 fz13">Email:</p>
+        <input type="text" class="inp " name="email" id="email" email="true" required="true"/>
+        <p class="none mt20 fz13">Subject:</p>
+        <input type="text" class="inp " name="subject" id="subject" minlength="1" required="true"/>
+        <p class="none mt20 fz13">Your Message:</p>
+        <textarea  class="inp" name="message" id="message"  required="true">
+
+        </textarea>
+        <div class="mt30">
+            <button type="submit" class="btn btn-success fz24">Send</button>
+        </div>
+    </form>
+</div>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<!--<script src="js/validate.config.js"></script>-->   <!--需要中文提示引入这个-->
+<script>
+    $(function(){
+        $("form[name='contact-us']").validate({
+            submitHandler:function(form){
+                Alert("提交成功!",true);
+                form.submit();
+            }
+        });
+    })
+</script>
+</html>

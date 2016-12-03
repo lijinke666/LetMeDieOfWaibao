@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>选手资料</title>
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/swiper.3.1.2.min.css"/>
+    <script src="js/loading.js"></script>
+</head>
+<body>
+<footer class="section flex text-center flex-vc flex-hc">
+    <a href="/" class="box-flex-1">
+        <div class="icon-home active"></div>
+        <span class="active">首页</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-baoming"></div>
+        <span>报名</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-sousuo"></div>
+        <span>搜索</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-hezuo"></div>
+        <span>大赛合作</span>
+    </a>
+</footer>
+<div class="body header-margin footer-margin">
+    <div class="flex flex-hx zL_padding zL_back">
+        <div class="box-flex-1 zL_img zL_padding" >
+            <img src="images/banner.jpg">
+        </div>
+        <div class="box-flex-1 zL_paddingTop">
+            <ul class="none text-left fz14rem color-white">
+                <li>姓名:李金珂</li>
+                <li>唱的赛区</li>
+                <li><span class="zL_span">亲亲</span></li>
+            </ul>
+        </div>
+        <div class="box-flex-1 zL_paddingTop">
+            <ul class="none text-left fz14rem color-white">
+                <li>编号:11102</li>
+                <li>总票数：3333333</li>
+                <li><span class="zL_span">分享给朋友</span></li>
+            </ul>
+        </div>
+    </div>
+   <div class="flex flex-hx text-center fz14rem recharge-col color-grey">
+       <div class="box-flex-1">票数：1</div>
+       <div class="box-flex-1">棒棒糖：1</div>
+       <div class="box-flex-1">抱抱：1</div>
+       <div class="box-flex-1">亲亲；1</div>
+   </div>
+   <p class="color-light fz2rem text-center">个人简介</p>
+    <div class="zL_jieSao">
+   <ul class="none flex flex-zx fz16rem">
+       <li class="box-flex-1 text-center"><span class="text-left">姓名：自己</span></li>
+       <li class="box-flex-1 text-center"><span class="text-left">民族：汉</span></li>
+       <li class="box-flex-1 text-center"><span class="text-left">年龄：50</span></li>
+       <li class="box-flex-1 text-center"><span class="text-left">身高：1.2cm</span></li>
+       <li class="box-flex-1 text-center"><span class="text-left">体重：40KG</span></li>
+       <li class="box-flex-1 text-center"><span class="text-left">参赛口号：我是你打野</span></li>
+   </ul>
+   <p class="text-center fz16rem"><span class="zL_jieJie color-grey text-left zL_padding">个人介绍：美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽美丽</span></p>
+    </div>
+        <!--选手图片-->
+        <div class="mt1rem">
+            <div class="swiper-container">
+                <ul class="none swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img data-src="images/banner.jpg" alt="" class="swiper-lazy player-img"/>
+                        <div class="swiper-lazy-preloader"></div>
+                    </li>
+                    <li class="swiper-slide">
+                        <img data-src="images/banner.jpg" alt="" class="swiper-lazy player-img"/>
+                        <div class="swiper-lazy-preloader"></div>
+                    </li>
+                    <li class="swiper-slide">
+                        <img data-src="images/banner.jpg" alt="" class="swiper-lazy player-img"/>
+                        <div class="swiper-lazy-preloader"></div>
+                    </li>
+                    <li class="swiper-slide">
+                        <img data-src="images/banner.jpg" alt="" class="swiper-lazy player-img"/>
+                        <div class="swiper-lazy-preloader"></div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="flex flex-zx zL_poSt text-center">
+       <ul class="none text-center">
+           <li><a href="#">投票</a></li>
+           <li><a href="#">排行榜</a></li>
+           <li><a href="#">棒棒糖</a></li>
+           <li><a href="#">抱抱</a></li>
+           <li><a href="#">亲亲</a></li>
+       </ul>
+   </div>
+</div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.3.1.2.jquery.min.js"></script>
+<script>
+    $(function() {
+        //选手图片
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 4000,
+            loop: true,
+            lazyLoading : true,
+        });
+    });
+</script>
+</html>

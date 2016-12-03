@@ -1,0 +1,624 @@
+@charset "utf-8";
+
+/* 引入配置文件（全局变量） */
+@import "include/config.scss";
+
+/* 引入compass的库 */
+@import "compass/css3";
+@import 'blueprint/colors';
+@import "compass/support";
+@import "compass/css3/box";
+
+/* 引入自定义的工具与基础样式 */
+@import "include/util.scss";
+@import "include/base.scss"; 
+
+
+
+/* 页面大于480时整体放大页面内容 */
+@include min-screen(480px) {
+	html{ font-size:16px;}
+}
+@include min-screen(1280px) {
+    html{ font-size:18px;}
+}
+
+
+/* 向右的箭头 */
+.arrow-r { position: relative;}
+.arrow-r::before { content: ""; position: absolute; top: 50%; right:0.3rem; width: 1rem; height: 1rem; margin-top: -0.35rem; border: solid rgba(0,0,0,.2); border-width:0.2rem 0.2rem 0 0; @extend %translate-centerY; @extend %rotate-45;}
+
+
+/* 头部 */
+$header-height: 4.8rem;
+header { position:fixed; top:0; left:0; width:100%; background-color:$main-color; height:$header-height; z-index:12000;
+	& > div { height:$header-height; line-height:$header-height;}
+	h1 { margin:0; font-size:1.8rem; color:#FFF;}
+    .l{
+        padding-left: 1.2rem;
+    }
+    .r{
+        padding-right: 1.2rem;
+    }
+    div{
+        a:visited{
+            color: #FFF;
+        }
+        a{
+            color:#FFF;
+            font-size: 2rem;
+        }
+    }
+
+}
+header ~ .header-margin { margin-top:$header-height;}
+.text-left{ text-align: left;}
+.text-right{ text-align: right;}
+.text-center{ text-align: center;}
+.margin-none{ margin: 0;}
+header.index ~ .header-margin { margin-top:5rem;}
+.nav{height: 4rem; background: $main-color; color: #FFF; font-size: 1.6rem; line-height:4rem;
+    ul{ margin: 0; padding: 0; list-style: none;}
+    li{ padding-left:0.6rem;}
+    a{ height:4rem; color: #ffd7da; display:block; box-sizing: border-box; text-align: center; }
+    a.current{ color: #FFF; border-bottom: 0.2rem solid #FFF;}
+    
+}
+.subnav{ position:fixed; left: 0; top: 0; z-index: 99999; width: 100%; height: 100%; background: rgba(0,0,0,.5);
+   
+    .cont{ width: 20rem; background:#FFF; @include border-radius(0.6rem); 
+        a{ display: block; padding: 1rem; color:  $main-color; text-align: center; border-bottom: 1px solid rgba(0,0,0,.1);
+            &:last-child{ border-bottom:none};
+        }
+    }
+} 
+.nav ~ .body { padding-top:4rem;}
+.login-banner{line-height: 0;
+    img{width: 100%;}
+    .swiper-pagination-bullet{ background: rgba(255,255,255,.5); opacity: 1;
+        &.swiper-pagination-bullet-active{ background: $main-color;}
+    }
+    
+}
+.section{ margin: 0; background: #FFF; border-top: 1px solid $border-color; border-bottom: 1px solid $border-color; overflow: hidden;
+    & > *:last-child{border-bottom:none; margin-bottom: -1px;}
+}
+
+.lifenav{
+    a{ display:block; float:left; width:25%; padding: 1.5rem 0; border-right: 1px solid $border-color; border-bottom: 1px solid $border-color; text-align: center;}
+    .icon{ display: block; height: 3rem; font-size: 3rem; color: $main-color;}
+    .name{ display: block; height: 1.4rem; font-size: 1.4rem; margin-top: 0.8rem; line-height:1.4rem; color: #666;}  
+}
+*.mt1rem{margin-top: 1rem;}
+
+.fixed100{ padding: $header-height 0 6rem; height: 100%;}
+.fixedfooter{ height: 6rem; padding: 1rem; background: #FFF; border-top: 1px solid $border-color; font-size: 1.6rem;
+    .btn{ height: 4rem;}
+}
+.recharge-col{ font-size: 1.6rem; min-height: 4.6rem; padding: 0.8rem 1rem; line-height: 2.2rem; border-bottom: 1px solid $border-color;  }
+.mode-title{
+    >h2{
+        font-size: 1.8rem;
+        padding-left: 1.2rem;
+        border-left:0.2rem solid $green-color;
+    }
+    @extend %box-shadow;
+}
+.money{
+    display: inline-block;
+    font-style: normal;
+    margin-right:0.3rem;
+}
+.commodity-list{
+    margin-top: 0.8rem;
+    li{
+        width: 49%;
+        margin-top: 0.8rem;
+        border-bottom:1px solid $border-color;
+        display: inline-block;
+        a{
+            >hgroup{
+                border:1px solid $border-color;
+                .commodity-title,.commodity-price{
+                    padding: 0.2rem 0.7rem;
+                }
+                .commodity-title{
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+            .price-img-box{
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                height: 14.5rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .price-num{
+                    position: absolute;
+                    width: 100%;
+                    height: 3.5rem;
+                    background: rgba(0,0,0,0.4);
+                    color:rgba(255,255,255,.65);
+                    bottom:0;
+                    left:0;
+                    line-height: 3.5rem;
+                    padding-right: 1rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .commodity-price{
+            .now-price{
+                color:$main-color;
+                i{
+                    font-style: normal;
+                    margin-left: 0.2rem;
+                }
+            }
+            .original-price{
+                margin-left: 1.7rem;
+                color:$light-gray;
+                font-size: 1.3rem;
+            }
+        }
+
+    }
+}
+.banner-list{
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;;
+    background: $main-color;
+    color: #FFF;
+}
+.banner-img{
+    max-width: 100%;
+}
+.footer-info{
+    padding: 0.65rem 0;
+    margin-bottom:$header-height+1.5rem;
+    .line{
+        margin: 0 0.5rem;
+    }
+    >div:nth-child(1){
+        margin-bottom:0.45rem;
+    }
+}
+footer{
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+    border-top: 1px solid $border-color;
+    z-index: 9999;
+    >a{
+        padding-top:0.3rem;
+        div{
+            font-size: 2.2rem;
+            margin-bottom:0.2rem;
+            @extend %transition-02;
+        }
+        span{
+            font-size: 1.7rem;
+        }
+        .active{
+            color:$main-color;
+        }
+    }
+    .price-bottom{
+        margin-bottom: 0.4rem;
+    }
+}
+.come-back{
+    width: 4rem;
+    height: 4rem;
+    @extend %radius-100p;
+    background: rgba(0,0,0,.5);
+    @extend %text-shadow;
+    line-height: 4rem;
+    text-align: center;
+    color:#FFF;
+    position: fixed;
+    right:1.2rem;
+    bottom: $header-height+1.2rem;
+    display: none;
+    z-index: 9999;
+}
+/*=========个人中心=============*/
+//可用积分
+.available-points{
+    border:none;
+    padding: 1.35rem;
+    margin-top: $header-height+1.2rem;
+    >div:nth-child(1){
+        h2{
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+        p{
+            font-size: 2.2rem;
+            span{
+                vertical-align: top;
+                margin-right: 0.25rem;
+                color:$main-color;
+            }
+        }
+    }
+}
+.buy{
+    padding: 0.75rem 0;
+    border:none;
+    >div:nth-child(1),>div:nth-child(2){
+        border-right:1px solid $border-color;
+    }
+    >div{
+        span:nth-child(1){
+            margin-right: 0.3rem;
+        }
+    }
+}
+//操作
+.operation-list{
+    margin-top: 0.5rem;
+    ul{
+        margin-top: 0.3rem;
+        li{
+            padding: 1.2rem 0;
+            border-right: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            div{
+                font-size: 2.5rem;
+                margin-bottom: 0.6rem;
+            }
+        }
+    }
+}
+//退出登录
+.back-login{
+    height: 4rem;
+    line-height: 2.5rem;
+    margin-top: 2.2rem;
+    border:none;
+    background: none;
+    >button{
+        height: 3.5rem;
+    }
+}
+
+/*商品详情*/
+.product{
+    .product-price{
+        margin-top: 0.8rem;
+        >span{
+            font-size: 2.2rem;
+            margin-right: 0.55rem;
+            vertical-align: inherit;
+        }
+        .price{
+            margin-left: 0.4rem;
+            color:$main-color;
+            font-size: 2.5rem;
+        }
+    }
+    .product-title{
+        font-size: 1.5rem;
+        font-weight: normal;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px dashed $border-color;
+    }
+    .service-text{
+        padding: 1.5rem 0;
+        li{
+            font-size: 1.4rem;
+            margin-bottom:0.5rem;
+            >span:nth-child(1){
+                padding: 0.2rem 0.4rem;
+                display: inline-block;
+                min-width:6rem;
+                height: 2.1rem;
+                background: #444;
+                color:#FFF;
+                text-align: center;
+                @extend %text-shadow;
+                @extend %radius-02rem;
+                line-height: 2.1rem;
+            }
+            >span:nth-child(2){
+                margin-left: 0.8rem;
+            }
+        }
+    }
+}
+.product-info{
+    padding-top:2.2rem;
+    padding-bottom: 2.2rem;
+    h3{
+        font-weight: normal;
+        margin-bottom: 1.2rem;
+    }
+    table{
+        tr td:first-child{
+            width: 7.5rem;
+            padding-right: 0.8rem;
+        }
+        tr td{
+            vertical-align: top;
+            font-size: 1.5rem;
+        }
+    }
+    .product-pic{
+        img{
+            max-width: 100%;
+            margin-bottom:0.5rem;
+        }
+    }
+}
+.product-detail-num{
+    width: 6.5rem;
+    border:1px solid $border-color;
+    margin-right: 0.7rem;
+    line-height: 3.5rem;
+    position: relative;
+    .shop-all-num{
+        width: 1.75rem;
+        height: 1.75rem;
+        @extend %radius-100p;
+        background: rgba(235, 96, 1, 0.8);
+        line-height: 1.75rem;
+        @extend %text-shadow;
+        position: absolute;
+        right:-0.6rem;
+        top:-0.6rem;
+        @include transform(translate(-550%,-550%));
+        z-index: 19999;
+        @include opacity(0);
+    }
+}
+.shop-animate{ @include animation(shop 1.2s cubic-bezier(.83,.97,.05,1.44) forwards);}
+@include keyframes(shop){
+    to{
+        opacity: 1;
+        @include transform(translate(0,0));
+    }
+}
+.product-detail-num,.push-shop{
+    height: 3.5rem;
+}
+.push-shop{
+    line-height: 2.5rem;
+}
+
+/*购物车页面*/
+.shop{
+    margin-top:$header-height+1.5rem;
+    li{
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+    }
+    ul{
+        .shop-img{
+            width: 7.5rem;
+            height: 7.5rem;
+            margin-right: 1rem;
+            overflow: hidden;
+            >img{
+                max-width: 100%;
+            }
+        }
+        h4{
+            font-weight: normal;
+        }
+        .shop-price{
+            span{
+                display: block;
+            }
+            .delete{
+                margin-top: 0.7rem;
+                span{
+                    font-weight: bold;
+                }
+            }
+
+        }
+        .price{
+            display: inline-block !important;
+        }
+        .amount{
+            margin-top: 0.8rem;
+            >span{
+                vertical-align: middle;
+                display: inline-block;
+                border: 1px solid $border-color;
+                text-align: center;
+            }
+            .num{
+                width: 3.5rem;
+            }
+            .num-down,.num-up{
+                width: 2.5rem;
+                font-size: 2.2rem;
+
+            }
+        }
+    }
+}
+.vip{
+    background: #FFF;
+    >div{
+        >span{
+            margin-right:0.5rem;
+            vertical-align: top;
+        }
+    }
+}
+.vip-border{
+    border-top:1px dashed $border-color;
+    border-bottom:1px dashed $border-color;
+}
+
+/*商品总价*/
+.shop-all-price-box{
+    padding-top: .75rem;
+}
+
+
+/*错误提示*/
+.err-tip{
+    min-width:8.2rem;
+    min-height: 3rem;
+    padding: 0 1.5rem;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    color: #FFF;
+    line-height: 3rem;
+    position: fixed;
+    z-index: 9999;
+    left:50%;
+    top:50%;
+    @include transform(translate(-50%,-50%));
+    @include border-radius(2rem);
+    span{
+        margin-right:0.4rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+}
+
+
+/*结算页面*/
+.pay-address-box{
+    padding: 1.8rem 1rem;
+    background: #FFFCEC;
+    border-bottom: 1px dashed $border-color;
+    .pay-phone{
+        margin-left: 1.8rem;
+    }
+    .pay-address{
+        margin-top: 0.5rem;
+    }
+    .address-icon{
+        margin-right:0.7rem;
+    }
+}
+.order{
+    margin-top: 0.8rem;
+    border-top:1px solid $border-color;
+    border-bottom:1px solid $border-color;
+    .order-title{
+        padding: 0.1rem 0;
+        border-bottom:1px solid $border-color;
+        >span{
+            margin-right:0.6rem;
+        }
+    }
+    .order-money{
+        >li{
+            padding: 0.75rem 0;
+        }
+        >li:nth-child(1){
+            border-bottom:1px solid $border-color;
+        }
+    }
+}
+.need-pay-money{
+    margin-top: 0.8rem;
+    >span{
+        margin-left: 0.4rem;
+    }
+}
+.pay-conversion{
+    height: 4rem;
+}
+/*抽奖页面*/
+/* 大转盘样式 */
+.banner{display:block;width:95%;margin-left:auto;margin-right:auto;margin-bottom: 20px;}
+.banner .turnplate{display:block;width:100%;position:relative;}
+.banner .turnplate canvas.item{width:100%;}
+.banner .turnplate img.pointer{position:absolute;width:31.5%;height:42.5%;left:34.6%;top:23%;}
+.game-header-margin{
+    margin-top: $header-height+1.5rem;
+}
+.prize-name{
+    @include transform(scale(0));
+    @include opacity(0);
+    @extend %transition-06;
+}
+.addPriceName-prev{
+    @include animation(price 0.5s ease-in-out forwards);
+}
+.addPriceName-next{
+    @include animation(price2 0.5s ease-in-out forwards);
+}
+@include keyframes(price){
+    from{
+        @include transform(scale(0));
+        @include opacity(0);
+    }
+    to{
+        @include transform(scale(1));
+        @include opacity(1);
+    }
+}
+@include keyframes(price2){
+    from{
+        @include transform(scale(1));
+        @include opacity(1);
+    }
+    to{
+        @include transform(scale(0));
+        @include opacity(0);
+    }
+}
+//首次登录积分弹窗
+.newbie-mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,.6);
+    z-index: 99999;
+    @include transition(all 1s cubic-bezier(.45,-0.03,.16,1.5));
+    @include transform(scale(0));
+    .newbie{
+        width: 60%;
+        position: relative;
+        top:50%;
+        left:50%;
+        @include transform(translate(-50%,-50%));
+        img{
+            width: 100%;
+        }
+        span{
+            display: inline-block;
+            position: absolute;
+            top:24%;
+            left:33%;
+            font-size: 2.8rem;
+            color:#FFF;
+        }
+    }
+}
+.newbie-animate{
+    @include transform(scale(1.0));
+}
+.padding{
+    padding-bottom: 8.5rem;
+}
+
+.reminder{
+    padding: 1rem 1rem 0.8rem 1rem;
+    margin-bottom: 1rem;
+    background-color: #FFFFCB;
+    >div:nth-of-type(1){
+        width: 7%;
+    }
+    >div:nth-of-type(2){
+    overflow: hidden;
+        white-space: nowrap;
+    }
+}

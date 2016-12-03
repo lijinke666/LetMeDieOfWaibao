@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAGA,UAAU;AAKV,gCAAgC;AAyBhC,WAAW;AAKX,QAAQ;AAER,gCAAgC",
+"sources": ["../../sass/include/config.scss"],
+"names": [],
+"file": "config.css"
+}

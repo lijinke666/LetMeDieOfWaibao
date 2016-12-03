@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+/* 全站配置 */
+
+//是否为亮色，(分为亮/深色。亮色时hover与active会加深，但深色时会变浅)
+$is-light				: true !default;
+
+/*=============颜色=============*/
+
+$page-bg			: #f8f8f8 !default;
+
+//站点主色调
+$main-color			: #EB6001 !default;
+
+//点缀的颜色
+$ornament-color		: #EB6001  !default;
+//蓝色
+$blue-color          :#06A      !default;;
+//绿色
+
+$green-color        : #20bf01 !default;
+
+//站点文本颜色
+$font-color			: #444 !default;
+//浅灰色
+$light-gray         : #98989f;
+//连接颜色
+$a-color			: #333 !default;
+
+ //边框颜色
+$border-color		: #eee !default;
+
+/* 极细线颜色 */
+$hairlines-color	: darken($border-color, 20%) !default;
+
+$red-color			: #f8491a;
+
+/*阴影颜色*/
+$box-shadow-color   :#f6f6f6;
+/*=============铵钮=============*/
+
+//默认颜色
+$btn-default		: #f00 !default;
+
+//主要颜色
+$btn-primary	: $main-color !default;
+//
+$btn-ornament:$ornament-color !default;
+//高亮颜色
+$btn-highlight	: $ornament-color !default;
+
+$supported-browsers: chrome,firefox;
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>萌宝大赛</title>
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/loading.js"></script>
+    <link rel="stylesheet" href="font/font.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/upload.css"/>
+    <link rel="stylesheet" href="css/swiper.3.1.2.min.css"/>
+</head>
+<body>
+<!--头部倒计时-->
+<header class="flex">
+    <div class="c box-flex-1 text-center">
+        <h1 class="endTime" data-endTime="2016/8/5 00:00:00">活动剩余时间
+            <span id="d"></span>天<span id="h"></span>时<span id="m"></span>分<span id="s"></span>秒
+        </h1>
+    </div>
+
+</header>
+<footer class="section flex text-center flex-vc flex-hc">
+    <a href="/" class="box-flex-1">
+        <div class="icon-home active"></div>
+        <span class="active">首页</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-baoming"></div>
+        <span>报名</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-sousuo"></div>
+        <span>搜索</span>
+    </a>
+    <a href="#" class="box-flex-1">
+        <div class="icon-hezuo"></div>
+        <span>大赛合作</span>
+    </a>
+</footer>
+<div class="header-margin body footer-margin">
+    <!--轮播图-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+                <div class="swiper-slide"><img src="images/banner.jpg" alt="" class="banner-img"/></div>
+            </div>
+        </div>
+    <form id="form" action="#" method="post" class="baoming-form">
+    <ul class="ul none section baoming-form">
+        <li class="recharge-col flex flex-vc">
+            <span >姓名:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" id="info[name]" name="name" type="text" placeholder="宝宝真实姓名" datatype="/^[a-zA-Z\u4e00-\u9fa5]{2,4}$/" nullmsg="请输入宝宝真实姓名" errormsg="请输入正确宝宝姓名">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>电话:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" id="info[mobile]" name="mobie" type="text" placeholder="家长手机号码" datatype="m" nullmsg="请输入家长手机号码" errormsg="请输入正确的手机号">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>微信号:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="weixin" type="text" placeholder="请输入家长或宝宝的微信号" datatype=" /^[0-9a-zA-Z]+$/" nullmsg="请输入家长或宝宝的微信号" errormsg="请输入正确的家长或宝宝的微信号">
+        </li>
+        <li class="recharge-col flex flex-vc">
+        <span>赛区:</span>
+            <select name="area" id="join_province" class="inp inp-block"  datatype="*" nullmsg="请选择赛区" errormsg="请选择正确的赛区">
+                <option value="萌宝赛区">萌宝赛区</option>
+                <option value="四川赛区">四川赛区</option>
+                <option value="常德赛区">常德赛区</option>
+                <option value="云南赛区">云南赛区</option>
+                <option value="贵州赛区">贵州赛区</option>
+                <option value="北京赛区">北京赛区</option>
+                <option value="天津赛区">天津赛区</option>
+                <option value="上海赛区">上海赛区</option>
+                <option value="湖北赛区">湖北赛区</option>
+                <option value="河南赛区">河南赛区</option>
+                <option value="河北赛区">河北赛区</option>
+                <option value="辽宁赛区">辽宁赛区</option>
+                <option value="黑龙江赛区">黑龙江赛区</option>
+                <option value="安徽赛区">安徽赛区</option>
+                <option value="山东赛区">山东赛区</option>
+                <option value="新疆赛区">新疆赛区</option>
+                <option value="江苏赛区">江苏赛区</option>
+                <option value="浙江赛区">浙江赛区</option>
+                <option value="江西赛区">江西赛区</option>
+                <option value="广西赛区">广西赛区</option>
+                <option value="甘肃赛区">甘肃赛区</option>
+                <option value="山西赛区">山西赛区</option>
+                <option value="陕西赛区">陕西赛区</option>
+                <option value="内蒙古赛区">内蒙古赛区</option>
+                <option value="吉林赛区">吉林赛区</option>
+                <option value="福建赛区">福建赛区</option>
+                <option value="广东赛区">广东赛区</option>
+                <option value="青海赛区">青海赛区</option>
+                <option value="西藏赛区">西藏赛区</option>
+                <option value="宁夏赛区">宁夏赛区</option>
+                <option value="台湾赛区">台湾赛区</option>
+                <option value="香港赛区">香港赛区</option>
+                <option value="澳门赛区">澳门赛区</option>
+                <option value="重庆赛区">重庆赛区</option>
+                <option value="广安赛区">广安赛区</option>
+            </select>
+        </li>
+
+        <li class="recharge-col flex flex-vc">
+            <span>所在地:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="address" type="text" placeholder="现居住地" datatype="/^[a-zA-Z\u4e00-\u9fa5]{2,}$/" nullmsg="请输入居住地" errormsg="请输入正确的居住地">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>年龄:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="age" type="text" placeholder="年龄" datatype="n" nullmsg="请输入你年龄" errormsg="请输入正确的年龄">
+        </li>
+
+        <li class="recharge-col flex flex-vc">
+            <span>身高:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="shengao" type="text" placeholder="例如 110cm" datatype="s" nullmsg="请输入身高" errormsg="请选择正确的身高">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>体重:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="tizhong" type="text" placeholder="例如 30kg" datatype="s" nullmsg="请输入体重" errormsg="请选择正确的体重">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>民族:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="jiguan" type="text" placeholder="民族" datatype="s" nullmsg="请输入民族" errormsg="请选择正确的民族">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>口号:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="kouhao" type="text" placeholder="参赛口号" datatype="s" nullmsg="请输入参赛口号" errormsg="请选择正确的参赛口号">
+        </li>
+        <li class="recharge-col flex flex-vc">
+            <span>个人介绍:</span>
+            <input class="input inp inp-block box-flex-1 inp-noborder inp-noOutline" name="jieshao" type="text" placeholder="个人介绍" datatype="s" nullmsg="请输入个人介绍" errormsg="请输入正确的个人介绍">
+        </li>
+    </ul>
+        <input type="file" id="choose" accept="image/*" multiple>
+
+        <ul class="img-list">
+
+
+        </ul>
+
+        <a id="upload">上传图片</a>
+
+        <span class="tips">只允许上传jpg、png及gif</span>
+
+        <div class="pic-list">
+        </div>
+        <div class="recharge-col flex flex-vc">
+            <button type="submit" class="btn btn-primary btn-block " id="baoming-submit">提交</button>
+        </div>
+</form>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/swiper.3.1.2.jquery.min.js"></script>
+<script src="js/Validform_v5.3.2_min.js"></script>
+<script src="js/upload.js"></script>
+<script>
+    $(function(){
+        //表单验证
+       var $baoming_form= $(".baoming-form").Validform({
+            tiptype:function(msg){
+                Alert(msg);
+            },
+            showAllError:false,//逐条验证
+            callback:function(form){
+               var photoArray = [];
+               $("#baoming-submit").on("click",function(){
+                   photoArray.splice(0,photoArray.length);
+                   var UpLoadList = $(".img-list>li");
+                   for(var i=0; i<UpLoadList.length; i++){
+                       var bg = $(UpLoadList[i]).css("background-image");
+                       var base64 = bg.substring(bg.indexOf("(")+1,bg.lastIndexOf(")"));
+                       photoArray.push(base64);
+                   }
+                   $(".img-list").empty();
+               });
+               $(form).ajaxSubmit({
+                   url:"",
+                   type:"post",
+                   dataType:"json",
+                   data:{msg:$(".baoming-form").serialize(),photoArray:photoArray},
+                   success:function(){
+                       Alert('报名成功',true);
+                       window.location.reload();
+                   },
+                   error:function(){
+                       Alert("上传失败");
+                       window.location.reload();
+                   }
+               })
+           }
+        });
+
+
+        //首页幻灯片
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 4000,
+            loop: true
+        });
+
+        //倒计时
+        function loadTime(){
+            setTimeout(function(){
+                var nowTime = new Date().getTime(),      //当前时间
+                        endTime = $('.endTime'),
+                        EndTime = new Date(endTime.attr("data-endTime")).getTime(),       //截止时间
+                        time = EndTime - nowTime;
+
+                var d = Math.floor(time / 1000 /60 /60 / 24);
+                time -= d * 1000 *60 *60 *24;
+                var h = Math.floor(time / 1000 / 60 / 60);
+                time -= h * 1000 * 60 * 60;
+                var m = Math.floor(time / 1000 / 60);
+                time -= m * 1000 * 60;
+                var s = Math.floor(time / 1000);
+                if (m < 10) {
+                    m = "0" + m;
+                }
+                if (h < 10) {
+                    h = "0" + h;
+                }
+                if (s < 10) {
+                    s = "0" + s;
+                }
+                var dd = $("#d"),
+                        hh = $("#h"),
+                        mm = $("#m"),
+                        ss = $("#s");
+                dd.html(d);
+                hh.html(h);
+                mm.html(m);
+                ss.html(s);
+                loadTime();
+            },1000);
+        }
+        loadTime();
+    })
+</script>
+</html>

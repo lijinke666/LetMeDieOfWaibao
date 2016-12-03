@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if IE]>
+    <script src="js/html5.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部-->
+<div class="top shop-margin">
+    <div class="pull-left fz15">Free Shipping Worldwide on all orders</div>
+    <div class="pull-right"><a href="#" class="margin-right">Your Account</a><a href="#" class="margin-right">Help</a><a href="#">Cart ( 0 )</a></div>
+</div>
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <ul class="clearListStyle">
+                <li><a href="">SHOP</a></li>
+                <li><a href="">OUR STORY</a></li>
+                <li><a href=""><img src="images/logo.png" alt="商城logo"/></a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!--购物车部分-->
+<div class="shop-content">
+    <h2 class="shop-title normal none">Shopping Cart</h2>
+    <div class="shop-content-info-title fz16">
+        <span class="width1">Item</span><span class="width2">Quantity</span><span class="width3">Unit Price</span><span class="width4">Subtotal</span>
+    </div>
+    <ul class="clearListStyle shop-content-info">
+        <li>
+            <div class="width1 shop-img-box">
+                <div>
+                    <div class="shop-img pull-left"><img src="images/show_img1.jpg" alt=""/></div>
+                    <div class="shop-text pull-left">
+                        <p class="none fz15"><a href="#">Yaskawa SGMAH-A3A1A-YR11 Servo Motor</a></p>
+                        <a href="#" class="fz12">Remove</a>
+                    </div>
+                </div>
+            </div>
+            <div class="width2 shop-sum-box">
+                <div class="shop-sum">
+                    <input type="text" class="inp-texTNews inp inp-noborder text-center" value="2"/>
+                    <div class="pull-right">
+                        <div class="shop-sum-up fz18 text-center shop-jia"><strong class="num-up">+</strong></div><div class="shop-sum-down fz18 text-center shop-jian"><strong class="num-down">-</strong></div>
+                    </div>
+                </div>
+            </div>
+            <div class="width3 shop-price-box">
+                $ <span class="fz13 price">60.00</span>
+            </div>
+            <div class="width4 shop-allprice-box">
+                $ <span class="fz13"><strong class="this-all-price">120.00</strong></span>
+            </div>
+        </li>
+        <li>
+            <div class="width1 shop-img-box">
+                <div>
+                    <div class="shop-img pull-left"><img src="images/banner.png" alt=""/></div>
+                    <div class="shop-text pull-left">
+                        <p class="none fz15"><a href="#">Yaskawa SGMAH-A3A1A-YR11 Servo Motor</a></p>
+                        <a href="#" class="fz12">Remove</a>
+                    </div>
+                </div>
+            </div>
+            <div class="width2 shop-sum-box">
+                <div class="shop-sum">
+                    <input type="text" class="inp-texTNews inp inp-noborder text-center" value="2"/>
+                    <div class="pull-right">
+                        <div class="shop-sum-up fz18 text-center shop-jia"><strong class="num-up">+</strong></div><div class="shop-sum-down fz18 text-center shop-jian"><strong class="num-down">-</strong></div>
+                    </div>
+                </div>
+            </div>
+            <div class="width3 shop-price-box">
+                $ <span class="fz13 price">90.00</span>
+            </div>
+            <div class="width4 shop-allprice-box">
+                $ <span class="fz13"><strong class="this-all-price">180.00</strong></span>
+            </div>
+        </li>
+    </ul>
+    <div class="clearfix all-price">
+        <div class="pull-left width1">
+            <span>◀<strong><a href="#">Continue shopping</a></strong></span>
+            <span>✖<strong><a href="#">Continue shopping</a></strong></span>
+        </div>
+        <div class="pull-left width2 text-center"><strong class="fz13">Estimated Order Total</strong></div>
+        <div class="pull-left width3 text-center color-red fz16">$  <span class="AllPrice">990.00</span></div>
+    </div>
+    <div class="shop-pay mt30">
+        <a href="#"><img src="images/pay.jpg" alt=""/></a>
+        <a href="#" class="btn btn-success pull-right fz18">Proceed to Checkout ></a>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+    $(function(){
+
+        each();
+        num($(".num-up"),true);
+        num($(".num-down"),false);
+        function each(){        //更新一次价格
+            var AllPrice =null,
+                    li = $(".shop-content-info>li"),
+                    this_all_price = $(".this-all-price");
+            li.each(function(){
+                AllPrice += parseInt($(this).find(this_all_price).html());
+            });
+            $(".AllPrice").html(AllPrice.toFixed(2));
+        }
+        function num( ele, type ){
+            ele.on("click",function(){
+                var $this = $(this),
+                    numBox = $this.parent().parent().prev(),       //当前商品数量
+                    num = numBox.val(),
+                    price = parseInt($this.parents("li").find(".price").html()),  //当前商品单价
+                    this_all_price = $this.parents("li").find(".this-all-price");     //当前商品总价
+
+                if(type==true){
+                    num++;
+                }else if(type==false){
+                    if(num>1){
+                        num--;
+                    }
+                }else{
+                    return false;
+                }
+                numBox.val(num);
+                this_all_price.html((num*price).toFixed(2));
+                each();
+            });
+
+            ele.parent().parent().prev().on("change",function(){
+                var req = /^[1-9][0-9]+$/;
+                var $this = $(this),
+                     num = $this.val();
+                if(!req.test(num)){
+                    Alert("请输入正确的数量",false,function(){
+                        window.location.reload();
+                    });
+                    return false;
+                }
+
+                var  price = parseInt($this.parents("li").find(".price").html()),  //当前商品单价
+                        this_all_price = $this.parents("li").find(".this-all-price");     //当前商品总价
+
+                this_all_price.html((num*price).toFixed(2));
+                each();
+
+            });
+        }
+    });
+</script>
+</html>
