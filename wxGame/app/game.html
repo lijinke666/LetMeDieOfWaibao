@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>喝思索引擎扬中国文化</title>
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/loading.js"></script>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+<header class="header">
+    <img src="images/header_img1.png" alt="" class="img1">
+    <img src="images/header_img2.png" alt="" class="img2">
+    <img src="images/header_img3.png" alt="" class="img3">
+    <img src="images/header_img4.png" alt="" class="img4">
+    <img src="images/header_img5.png" alt="" class="img5">
+    <img src="images/header_img6.png" alt="" class="img6">
+    <img src="images/header_title.png" alt="" class="title">
+</header>
+<section class="body">
+   <!--玩家头像显示区域-->
+    <div class="game-player-headImg text-center">
+        <!--房间号-->
+        <div class="game-player-title-bg">
+            <strong class="fz2rem zoomNumer">20</strong>
+            <img src="images/game_player_title.png" alt="号房间">
+        </div>
+        <!--玩家列表-->
+        <div class="game-player-list">
+            <ul class="none flex flex-hx flex-hc flex-hw game-player-items">
+                <!-- 添加  active 类  显示激活状态 -->
+                <!--<li class="box-flex-1 item ">-->
+                    <!--<img src="images/headImg.jpg" alt="loading..">-->
+                <!--</li>-->
+                <!--<li class="box-flex-1 item ">-->
+                    <!--<img src="images/headImg.jpg" alt="loading..">-->
+                <!--</li>-->
+                <!--<li class="box-flex-1 item active">-->
+                    <!--<img src="images/headImg.jpg" alt="loading..">-->
+                <!--</li>-->
+                <!--<li class="box-flex-1 item ">-->
+                    <!--<img src="images/headImg.jpg" alt="loading..">-->
+                <!--</li>-->
+                <!--<li class="box-flex-1 item ">-->
+                    <!--<img src="images/headImg.jpg" alt="loading..">-->
+                <!--</li>-->
+                <!--<li class="box-flex-1 item ">-->
+                    <!--<img src="images/headImg.jpg" alt="loading..">-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+    <!--转盘区域-->
+    <div class="game-rotate-box mt05rem">
+        <div class="game-header-margin">
+            <div class="banner">
+                <div class="turnplate">
+                    <!--绘制转盘的canvas-->
+                    <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+                    <!--开始喝酒图片-->
+                    <img class="pointer" src="images/turnplate-pointer.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--转盘区域结束-->
+    <!--游戏规则-->
+    <div class="game-rule mt05rem">
+        <section class="rule">
+            <img src="images/rule_img3.png" alt="" class="rule-img3">
+            <div class="title fz2rem color-white text-center"><img src="images/rule_img1.png" alt="游戏规则">游戏规则</div>
+            <ul class="none fz14rem color-white">
+                <li><img src="images/rule_img2.png" class="pull-right"></li>
+                <li>1) 进入可以选择桌号进入或者重新开</li>
+                <li>2) 开桌要设置密码或者类似桌号</li>
+                <li>3) 然后其他伙伴可以根据桌号或者密码进入</li>
+                <li>4) 游戏参与人数不定（2~10）人</li>
+                <li>5) 进入者显示微信头像，在界面上显示在一张圆桌上</li>
+                <li>6) 由第一个进入的发起，开始游戏，点击开始游戏，</li>
+                <li>7) 微信头像开始跑马灯效果闪亮</li>
+                <li>8) 第一个人开始点击 “开始” 然后就转</li>
+            </ul>
+        </section>
+    </div>
+</section>
+<footer>
+
+</footer>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/awardRotate.js"></script>
+<script src="js/game.js"></script>
+<script>
+    $(function() {
+
+        //实际通过ajax请求本房间参数  这里通过本地存储模拟一个 房间参数
+//        var myWXheadimgurl = "";
+        var zoomInfo = {}; //房间参数
+        if (window.sessionStorage) {
+            var sessionStorage = window.sessionStorage;
+            zoomInfo.zoomNumber = sessionStorage.getItem("zoomNumber");
+            zoomInfo.zoomPwd = sessionStorage.getItem("zoomPwd");
+            zoomInfo.zoomPeopleNum = sessionStorage.getItem("zoomPeopleNum");
+        } else {
+            popup("异常")
+        }
+        //请求微信头像
+        var loading;
+        $.ajax({
+            url: "/sendHeadImg",
+            type: "get",
+            dataType: "text",
+            beforeSend:function(){
+                loading = new loadingPopup("加载中,请稍后..");
+            },
+            success: function (wxHeadImgUrl) {
+                var wxHeadImgUrl = wxHeadImgUrl.split(",");
+                if(wxHeadImgUrl&&wxHeadImgUrl.length>0){
+                    for(var i =0; i<zoomInfo.zoomPeopleNum ;i++){
+                        if(wxHeadImgUrl[i]){
+                            createPlayer({
+                                wxHeadImg: wxHeadImgUrl[i]
+                            });
+                        }else{
+                            createPlayer();
+                        }
+
+                    }
+                    setPlayerActive(0);       //设置第一个玩家高亮
+
+                }else{
+                    popup("进入失败")
+                }
+                loading.delete();
+            },
+            error:function(){
+                popup("网络不好,请刷新重试");
+                loading.delete();
+            }
+        });
+        $(".zoomNumer").text(zoomInfo.zoomNumber ? zoomInfo.zoomNumber : "05");    //房间号
+
+
+    });
+</script>
+</html>

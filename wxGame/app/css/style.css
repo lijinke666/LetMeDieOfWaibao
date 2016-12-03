@@ -1,0 +1,449 @@
+.header{
+    background-color: #D4FFFF;
+    height: 16rem;
+    position: relative;
+    overflow: hidden;
+}
+.header>img{
+    display: block;
+    max-width: 100%;
+    z-index: 10;
+    position: absolute;
+}
+/*背景底图*/
+.header>.img1{
+    bottom:0;
+    left:0;
+}
+/*喝酒啦*/
+.header>.img2{
+    width: 15%;
+    top:3.8rem;
+    left:4rem;
+    z-index: 12;
+    -webkit-transform-origin: right center;
+        -ms-transform-origin: right center;
+            transform-origin: right center;
+    -webkit-animation: shake-animate 5s infinite alternate;
+            animation: shake-animate 5s infinite alternate;
+}
+/*饮料小图*/
+.header>.img3{
+    width: 20%;
+    left: 5.5rem;
+    bottom: 2rem;
+    z-index: 10;
+}
+/*啤酒*/
+.header>.img4{
+    width: 32%;
+    right:0;
+    top:2rem;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation: img4-animate 1s cubic-bezier(.6,-0.2,.37,1.07) .5s forwards;
+            animation: img4-animate 1s cubic-bezier(.6,-0.2,.37,1.07) .5s forwards;
+}
+/*小飞机*/
+.header>.img5{
+    width: 2rem;
+    top:0;
+    left:-10%;
+    -webkit-animation: fly-animate 14s infinite;
+            animation: fly-animate 14s infinite;
+}
+/*模糊遮罩层*/
+.header>.img6{
+    top:0;
+    right:3rem;
+    z-index: 11;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation: fade-animate 1s cubic-bezier(.89,.15,.37,1.07) 1.5s forwards;
+            animation: fade-animate 1s cubic-bezier(.89,.15,.37,1.07) 1.5s forwards;
+}
+/*标语*/
+.header>.title{
+    width: 60%;
+    left:0;
+    right: -4%;
+    bottom: 5%;
+    top:0;
+    margin:auto;
+    z-index: 1;
+    -webkit-animation: title-animate 1s cubic-bezier(.63,-0.59,.35,1.48) forwards;
+            animation: title-animate 1s cubic-bezier(.63,-0.59,.35,1.48) forwards;
+}
+.body{
+    position: relative;
+    z-index: 2;
+}
+/*头部动画*/
+/*从上往下*/
+@-webkit-keyframes title-animate {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate3d(0,300px,0);
+                transform: translate3d(0,300px,0);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+    }
+}
+@keyframes title-animate {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate3d(0,300px,0);
+                transform: translate3d(0,300px,0);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+    }
+}
+/*从右到左*/
+@-webkit-keyframes img4-animate {
+    0%{
+        -webkit-transform: translate3d(200px,0,0);
+                transform: translate3d(200px,0,0);
+    }
+    to{
+        -webkit-transform: scale(1) translate3d(0,0,0);
+                transform: scale(1) translate3d(0,0,0);
+    }
+}
+@keyframes img4-animate {
+    0%{
+        -webkit-transform: translate3d(200px,0,0);
+                transform: translate3d(200px,0,0);
+    }
+    to{
+        -webkit-transform: scale(1) translate3d(0,0,0);
+                transform: scale(1) translate3d(0,0,0);
+    }
+}
+/*小飞机一直飞*/
+@-webkit-keyframes fly-animate {
+    to{
+        -webkit-transform: translate3d(700px,0,0);
+                transform: translate3d(700px,0,0);
+    }
+}
+@keyframes fly-animate {
+    to{
+        -webkit-transform: translate3d(700px,0,0);
+                transform: translate3d(700px,0,0);
+    }
+}
+/*晃动*/
+@-webkit-keyframes shake-animate {
+    0%{
+        -webkit-transform: rotate(20deg);
+                transform: rotate(20deg);
+    }
+    50%{
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+    }
+
+}
+@keyframes shake-animate {
+    0%{
+        -webkit-transform: rotate(20deg);
+                transform: rotate(20deg);
+    }
+    50%{
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+    }
+
+}
+/*淡入淡出*/
+@-webkit-keyframes fade-animate {
+    0%{
+        opacity: 0;
+    }
+    to{
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes fade-animate {
+    0%{
+        opacity: 0;
+    }
+    to{
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+    }
+}
+.body{
+    padding: 1rem;
+}
+/*玩家头像显示区域*/
+.game-player-headImg{
+    background-color: #1AAD8C;
+    min-height: 8rem;
+    border-radius: 3rem;
+    padding: 1rem;
+    position: relative;
+    margin: 2rem 0 0 0;
+}
+.game-player-headImg .game-player-title-bg{
+    width: 12rem;
+    height: 7rem;
+    margin: auto;
+    left:0;
+    right:0;
+    bottom:0;
+    top:-8rem;
+    position: absolute;
+    z-index: 40;
+    line-height: 7rem;
+    background: url('../images/game_player_title_bg.png') no-repeat center;
+    background-size: 100%;
+}
+.game-player-headImg .game-player-title-bg>strong{
+    color:#034738;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(3, 71, 56, .3);
+}
+.game-player-headImg .game-player-title-bg>strong+img{
+    width: 4rem;
+    vertical-align: sub;
+    margin-right: 2rem;
+}
+.game-player-headImg .game-player-list{
+    padding: 2.4rem 0 0 0;
+}
+.game-player-headImg .game-player-list>ul>li>img{
+    width: 3rem;
+}
+.game-player-headImg .game-player-list>ul>li.item{
+    /*opacity: .5;*/
+    -webkit-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    position: relative;
+    z-index: 10;
+}
+.game-player-headImg .game-player-list>ul>li.item.scale0{
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+}
+.game-player-headImg .game-player-list>ul>li.item.scale1{
+    -webkit-animation: playerScale1 1s cubic-bezier(.53,-0.75,.2,1.64) forwards;
+            animation: playerScale1 1s cubic-bezier(.53,-0.75,.2,1.64) forwards;
+}
+@-webkit-keyframes playerScale1 {
+    to{
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+@keyframes playerScale1 {
+    to{
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+.game-player-headImg .game-player-list>ul>li.item.active{
+    opacity: 1;
+    -webkit-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+}
+.game-player-headImg .game-player-list>ul>li.item.active:before{
+    content: "";
+    position: absolute;
+    border:.8rem solid transparent;
+    border-bottom-color:#F5C932;
+    bottom:-1rem;
+    left:50%;
+    margin-left: -.8rem;
+    z-index: 40;
+    -webkit-animation: playerTip 2s cubic-bezier(.57,-0.11,.63,1.37) infinite;
+            animation: playerTip 2s cubic-bezier(.57,-0.11,.63,1.37) infinite;
+}
+@-webkit-keyframes playerTip {
+    to{
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+}
+@keyframes playerTip {
+    to{
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+}
+.game-rotate-box{
+    padding: 2rem;
+    background-color: #1AAD8C;
+    border-radius: 3rem;
+}
+.game-rotate-box .turnplate{
+    background: url("../images/turnplate-bg.png") no-repeat -2px 3px;
+    background-size: 100%;
+}
+/* 大转盘样式 */
+.banner { display: block; width: 95%; margin: 0 auto}
+
+.banner .turnplate { display: block; width: 100%; position: relative; }
+
+.banner .turnplate canvas.item { width: 100%; }
+
+.banner .turnplate img.pointer {
+    position: absolute;
+    width: 38%;
+    height: 44%;
+    left: 31%;
+    top: 24%;
+}
+
+/*.game-header-margin { margin-top: 6.3rem; }*/
+
+.prize-name { -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); opacity: 0; }
+
+.addPriceName-prev { -webkit-animation: price 0.5s ease-in-out forwards; animation: price 0.5s ease-in-out forwards; }
+
+.addPriceName-next { -webkit-animation: price2 0.5s ease-in-out forwards; animation: price2 0.5s ease-in-out forwards; }
+@-webkit-keyframes price { from { -webkit-transform: scale(0); transform: scale(0); opacity: 0; }
+    to { -webkit-transform: scale(1); transform: scale(1); opacity: 1; } }
+@keyframes price { from { -webkit-transform: scale(0); transform: scale(0); opacity: 0; }
+    to { -webkit-transform: scale(1); transform: scale(1); opacity: 1; } }
+@-webkit-keyframes price2 { from { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
+    to { -webkit-transform: scale(0); transform: scale(0); opacity: 0; } }
+@keyframes price2 { from { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
+    to { -webkit-transform: scale(0); transform: scale(0); opacity: 0; } }
+.newbie-mask { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 99999; -webkit-transition: all 1s cubic-bezier(0.45, -0.03, 0.16, 1.5); transition: all 1s cubic-bezier(0.45, -0.03, 0.16, 1.5); -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); }
+.newbie-mask .newbie { width: 60%; position: relative; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.newbie-mask .newbie img { width: 100%; }
+.newbie-mask .newbie span { display: inline-block; position: absolute; top: 24%; left: 33%; font-size: 2.8rem; color: #FFF; }
+
+.newbie-animate { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+
+.padding { padding-bottom: 8.5rem; }
+
+.reminder { padding: 1rem 1rem 0.8rem 1rem; margin-bottom: 1rem; background-color: #FFFFCB; }
+.reminder > div:nth-of-type(1) { width: 7%; }
+.reminder > div:nth-of-type(2) { overflow: hidden; white-space: nowrap; }
+
+/*游戏规则*/
+.game-rule{
+    background-color: #1AAD8C;
+    border-radius: 3rem;
+    padding: 1rem 0;
+}
+.game-rule .rule{
+    border:1px solid #37CAA9;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    width: 85%;
+    position: relative;
+}
+.game-rule .rule >.title{
+    min-width: 9rem;
+    height: 3rem;
+    line-height: 3rem;
+    position: absolute;
+    top:-1.4rem;
+    left:50%;
+    margin-left: -4.5rem;
+    background-color: #1AAD8C;
+}
+.game-rule .rule .pull-right{
+    float: right;
+    width: 2rem;
+}
+.game-rule .rule .rule-img3{
+    position: absolute;
+    left:-1rem;
+    top:-2rem;
+    width: 1.5rem;
+}
+.game-rule .rule >.title>img{
+    width: 2rem;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+/*home.html*/
+/*选择桌*/
+.home-header >img{
+    width: 100%;
+}
+.create-game{
+    background-color: #1AAD8C;
+    border-radius: 3rem;
+    padding: 1rem 4rem 2rem 4rem;
+    color:#f8fcfc;
+}
+.create-game .create-game-form{
+    margin-bottom: 1rem;
+}
+.create-game .create-game-form >div:nth-of-type(1){
+    margin-right: 2rem;
+}
+.create-game .create-game-form:nth-of-type(2) input{
+    background-color:#d4ffff ;
+    padding: .3rem .8rem;
+}
+.create-game .create-game-form >div>select{
+    padding: .3rem 2rem;
+    border:none;
+    background-color: #d4ffff;
+    border-radius: .3rem;
+    color: #5bc7b2;
+    font-weight: bold;
+}
+.create-game .btn-submit{
+    margin-top: 2rem;
+}
+/*选座*/
+.select-game{
+    background-color: #1AAD8C;
+    border-radius: 3rem;
+    padding: 4rem 0;
+}
+.select-game>ul>li{
+    width: 50%;
+    display: inline-block;
+    float: left;
+    min-height: 10rem;
+    position: relative;
+    margin-bottom: 7rem;
+}
+.select-game .game-player-item li.player-item{
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: .5rem;
+    background-color: #11725c;
+    position: absolute;
+}
+.select-game .game-player-item li.player-item>img{
+    width: 100%;
+}
+.select-game .tab-num{
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: #fdc841;
+    line-height: 4.2rem;
+    border-radius: 100%;
+    position: relative;
+    margin: 4rem auto;
+    box-shadow: 0 0 3px rgba(0,0,0,.4);
+}

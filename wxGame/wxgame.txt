@@ -1,0 +1,6 @@
+﻿开发者ID  测试号
+AppID(应用ID)               wx3ba18d0ad0e1471d
+AppSecret(应用密钥)     f8dd188ec219eefe27c01ff1c944db4f
+URL                               http://q158i32573.iask.in
+Token                            weixin
+免费域名 q158i32573.iask.in  
